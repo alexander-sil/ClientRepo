@@ -776,7 +776,17 @@ namespace Client.Logic
                     sb.AppendLine(item.ToString());
                 }
 
-                MessageBox.Query("", sb.ToString(), "OK");
+                int result = MessageBox.Query("", sb.ToString(), "OK", "Справка");
+
+                if (result == 1)
+                {
+                    MessageBox.Query("Справка", "МЧ -> Магическое число\n" +
+                                                             "Назв -> Название\n" +
+                                                             "Числ.вз -> Число взявших\n" +
+                                                             "Им -> Имя\n" +
+                                                            "Кл -> Класс\n" +
+                                                            "Зд -> Здание\n");
+                }
             }
             else
             {
