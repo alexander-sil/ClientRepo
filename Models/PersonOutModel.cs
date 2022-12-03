@@ -12,7 +12,7 @@
 
         public override string ToString()
         {
-            return $"{Name} {Class} {Building}";
+            return $"МЧ {Id} Им {Name} Кл {Class} Зд {Building}";
         }
     }
 }

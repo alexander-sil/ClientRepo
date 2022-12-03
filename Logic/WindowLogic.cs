@@ -6,7 +6,7 @@ namespace Client.Logic
     {
         // Общедоступные компоненты
 
-        public static ListView entryList = new ListView(new Rect(1, 2, Console.WindowWidth - 2, Console.WindowHeight - 3), MainLogic.EntryView);
+        public static ListView entryList = new ListView(new Rect(1, 2, Console.WindowWidth - 2, Console.WindowHeight - 3), new List<string>());
 
         public static Label getResults = new Label("Результаты запроса");
 
@@ -19,12 +19,6 @@ namespace Client.Logic
             Height = Dim.Fill()
         };
 
-        public static void UpdateView()
-        {
-            entryList.SetFocus();
-            entryList.MoveEnd();
-            entryList.MoveHome();
-        }
 
         // Стартовый метод
 

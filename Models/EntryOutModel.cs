@@ -22,7 +22,7 @@ namespace Client.Models
 
         public override string ToString()
         {
-            return $"{Id} {Name}";
+            return $"МЧ {Id} Назв {Name} Числ.вз {BorrowingPeople.Count}";
         }
     }
 }
