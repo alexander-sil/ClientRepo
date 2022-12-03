@@ -390,7 +390,47 @@ namespace Client.Logic
 
         private static void ShowBorrowerDeleteDialogYes()
         {
-            throw new NotImplementedException();
+            _BorrowerDeletionDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_BorrowerDeletionDialog);
+
+            string id = (string)_BorrowerDeleteDialogIdField.Text;
+
+            _BorrowerDeleteDialogYesButton.Clicked -= ShowBorrowerDeleteDialogYes;
+            _BorrowerDeleteDialogNoButton.Clicked -= ShowBorrowerDeleteDialogNo;
+
+            _BorrowerDeletionDialog.SetFocus();
+
+            GetUpdateDeleteStatus status;
+
+            if (int.TryParse(id, out int check))
+            {
+                (EntryOutModel model, status) = HTTPLogic.GetById(check);
+
+                if (status.SuccessRet)
+                {
+                    MainLogic.EntryView.Clear();
+
+                    MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
+                    MainLogic.EntryView.Add(model);
+
+                    WindowLogic.UpdateView();
+                }
+                else
+                {
+                    int result = MessageBox.Query("Ошибка получения записи", "ОК", "Справка");
+
+                    if (result == 1)
+                    {
+                        MessageBox.Query("Справка", "1) Пожалуйста, удостоверьтесь в том, что клиент подключен к узлу информационной системы правильного формата.\n" +
+                            "2) Запись, соответствующая указанному поисковому запросу может не существовать в БД", "OK");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Query("Ошибка", "Неверный формат модели", "OK");
+            }
         }
 
         public static void ShowGetByIdDialog()
@@ -415,7 +455,47 @@ namespace Client.Logic
 
         private static void ShowGetByIdDialogYes()
         {
-            throw new NotImplementedException();
+            _GetByIdDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_GetByIdDialog);
+
+            string id = (string)_GetByIdDialogIdField.Text;
+
+            _GetByIdDialogYesButton.Clicked -= ShowGetByIdDialogYes;
+            _GetByIdDialogNoButton.Clicked -= ShowGetByIdDialogNo;
+
+            _GetByIdDialog.SetFocus();
+
+            GetUpdateDeleteStatus status;
+
+            if (int.TryParse(id, out int check))
+            {
+                (EntryOutModel model, status) = HTTPLogic.GetById(check);
+
+                if (status.SuccessRet)
+                {
+                    MainLogic.EntryView.Clear();
+
+                    MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
+                    MainLogic.EntryView.Add(model);
+
+                    WindowLogic.UpdateView();
+                }
+                else
+                {
+                    int result = MessageBox.Query("Ошибка получения записи", "ОК", "Справка");
+
+                    if (result == 1)
+                    {
+                        MessageBox.Query("Справка", "1) Пожалуйста, удостоверьтесь в том, что клиент подключен к узлу информационной системы правильного формата.\n" +
+                            "2) Запись, соответствующая указанному поисковому запросу может не существовать в БД", "OK");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Query("Ошибка", "Неверный формат модели", "OK");
+            }
         }
 
         public static void ShowGetAllDialog()
@@ -438,7 +518,38 @@ namespace Client.Logic
 
         private static void ShowGetAllDialogYes()
         {
-            throw new NotImplementedException();
+            _GetAllDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_GetAllDialog);
+
+            _GetAllDialogYesButton.Clicked -= ShowGetAllDialogYes;
+            _GetAllDialogNoButton.Clicked -= ShowGetAllDialogNo;
+
+            _GetAllDialog.SetFocus();
+
+            GetUpdateDeleteStatus status;
+
+            (List<EntryOutModel> models, status) = HTTPLogic.GetAll();
+
+            if (status.SuccessRet)
+            {
+                MainLogic.EntryView.Clear();
+
+                MessageBox.Query("Сообщение", "Запись успешно получена", "OK");
+                MainLogic.EntryView.AddRange(models);
+
+                WindowLogic.UpdateView();
+            }
+            else
+            {
+                int result = MessageBox.Query("Ошибка получения записи", "ОК", "Справка");
+
+                if (result == 1)
+                {
+                    MessageBox.Query("Справка", "1) Пожалуйста, удостоверьтесь в том, что клиент подключен к узлу информационной системы правильного формата.\n" +
+                        "2) Запись, соответствующая указанному поисковому запросу может не существовать в БД", "OK");
+                }
+            }
         }
 
         public static void ShowSearchDialog()
@@ -458,12 +569,52 @@ namespace Client.Logic
 
         private static void ShowSearchDialogNo()
         {
-            throw new NotImplementedException();
+            _SearchDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_SearchDialog);
+
+            _SearchDialogYesButton.Clicked -= ShowSearchDialogYes;
+            _SearchDialogNoButton.Clicked -= ShowSearchDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowSearchDialogYes()
         {
-            throw new NotImplementedException();
+            _SearchDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_SearchDialog);
+
+            string term = (string)_SearchDialogTermTextField.Text;
+
+            _SearchDialogYesButton.Clicked -= ShowSearchDialogYes;
+            _SearchDialogNoButton.Clicked -= ShowSearchDialogNo;
+
+            _SearchDialog.SetFocus();
+
+            GetUpdateDeleteStatus status;
+
+            (List<EntryOutModel> models, status) = HTTPLogic.Search(term);
+
+            if (status.SuccessRet)
+            {
+                MainLogic.EntryView.Clear();
+
+                MessageBox.Query("Сообщение", "Запись успешно получена", "OK");
+                MainLogic.EntryView.AddRange(models);
+
+                WindowLogic.UpdateView();
+            }
+            else
+            {
+                int result = MessageBox.Query("Ошибка получения записи", "ОК", "Справка");
+
+                if (result == 1)
+                {
+                    MessageBox.Query("Справка", "1) Пожалуйста, удостоверьтесь в том, что клиент подключен к узлу информационной системы правильного формата.\n" +
+                        "2) Запись, соответствующая указанному поисковому запросу может не существовать в БД", "OK");
+                }
+            }
         }
 
         public static void ShowUpdateStateDialog()
@@ -484,12 +635,52 @@ namespace Client.Logic
 
         private static void ShowUpdateStateDialogNo()
         {
-            throw new NotImplementedException();
+            _UpdateStateDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateStateDialog);
+
+            _UpdateStateDialogYesButton.Clicked -= ShowUpdateStateDialogYes;
+            _UpdateStateDialogNoButton.Clicked -= ShowUpdateStateDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowUpdateStateDialogYes()
         {
-            throw new NotImplementedException();
+            _UpdateStateDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateStateDialog);
+
+            string id = (string)_UpdateStateDialogIdTextField.Text;
+            string state = (string)_UpdateStateDialogStateTextField.Text;
+
+            _UpdateStateDialogYesButton.Clicked -= ShowUpdateStateDialogYes;
+            _UpdateStateDialogNoButton.Clicked -= ShowUpdateStateDialogNo;
+
+            _UpdateStateDialog.SetFocus();
+
+            GetUpdateDeleteStatus status;
+
+            if (int.TryParse(id, out int check))
+            {
+                status = HTTPLogic.UpdateState(check, state);
+
+                if (status.SuccessRet) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
+                else
+                {
+                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+
+                    if (result == 1)
+                    {
+                        MessageBox.Query("Справка", "1) Пожалуйста, удостоверьтесь в том, что клиент подключен к узлу информационной системы правильного формата (не БД).\n" +
+                            "2) Запись с идентичными значениями может уже быть записана на стороне сервера", "OK");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Query("Ошибка", "Неверный формат модели", "OK");
+            }
         }
 
         public static void ShowUpdateNameDialog()
@@ -510,12 +701,54 @@ namespace Client.Logic
 
         private static void ShowUpdateNameDialogNo()
         {
-            throw new NotImplementedException();
+            _UpdateNameDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateNameDialog);
+
+            _UpdateNameDialogYesButton.Clicked -= ShowUpdateNameDialogYes;
+            _UpdateNameDialogNoButton.Clicked -= ShowUpdateNameDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowUpdateNameDialogYes()
         {
-            throw new NotImplementedException();
+
+            _UpdateNameDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateNameDialog);
+
+            string id = (string)_UpdateNameDialogIdTextField.Text;
+            string name = (string)_UpdateNameDialogNameTextField.Text;
+
+            _UpdateNameDialogYesButton.Clicked -= ShowUpdateNameDialogYes;
+            _UpdateNameDialogNoButton.Clicked -= ShowUpdateNameDialogNo;
+
+            _UpdateUnitDialog.SetFocus();
+
+            GetUpdateDeleteStatus status;
+
+            if (int.TryParse(id, out int check))
+            {
+                status = HTTPLogic.UpdateName(check, name);
+
+                if (status.SuccessRet) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
+                else
+                {
+                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+
+                    if (result == 1)
+                    {
+                        MessageBox.Query("Справка", "1) Пожалуйста, удостоверьтесь в том, что клиент подключен к узлу информационной системы правильного формата (не БД).\n" +
+                            "2) Запись с идентичными значениями может уже быть записана на стороне сервера", "OK");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Query("Ошибка", "Неверный формат модели", "OK");
+            }
+
         }
 
         public static void ShowUpdateQuantityDialog()
@@ -536,12 +769,52 @@ namespace Client.Logic
 
         private static void ShowUpdateQuantityDialogNo()
         {
-            throw new NotImplementedException();
+            _UpdateQuantityDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateQuantityDialog);
+
+            _UpdateQuantityDialogYesButton.Clicked -= ShowUpdateQuantityDialogYes;
+            _UpdateQuantityDialogNoButton.Clicked -= ShowUpdateQuantityDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowUpdateQuantityDialogYes()
         {
-            throw new NotImplementedException();
+            _UpdateQuantityDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateQuantityDialog);
+
+            string id = (string)_UpdateQuantityDialogIdTextField.Text;
+            string quantity = (string)_UpdateQuantityDialogQuantityTextField.Text;
+
+            _UpdateQuantityDialogYesButton.Clicked -= ShowUpdateQuantityDialogYes;
+            _UpdateQuantityDialogNoButton.Clicked -= ShowUpdateQuantityDialogNo;
+
+            _UpdateUnitDialog.SetFocus();
+
+            GetUpdateDeleteStatus status;
+
+            if (int.TryParse(id, out int check) && uint.TryParse(quantity, out uint qcheck))
+            {
+                status = HTTPLogic.UpdateQuantity(check, qcheck);
+
+                if (status.SuccessRet) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
+                else
+                {
+                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+
+                    if (result == 1)
+                    {
+                        MessageBox.Query("Справка", "1) Пожалуйста, удостоверьтесь в том, что клиент подключен к узлу информационной системы правильного формата (не БД).\n" +
+                            "2) Запись с идентичными значениями может уже быть записана на стороне сервера", "OK");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Query("Ошибка", "Неверный формат модели", "OK");
+            }
         }
 
         public static void ShowUpdateUnitDialog()
@@ -562,12 +835,52 @@ namespace Client.Logic
 
         private static void ShowUpdateUnitDialogNo()
         {
-            throw new NotImplementedException();
+            _UpdateUnitDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateUnitDialog);
+
+            _UpdateUnitDialogYesButton.Clicked -= ShowUpdateUnitDialogYes;
+            _UpdateUnitDialogNoButton.Clicked -= ShowUpdateUnitDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowUpdateUnitDialogYes()
         {
-            throw new NotImplementedException();
+            _UpdateUnitDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateUnitDialog);
+
+            string id = (string)_UpdateUnitDialogIdTextField.Text;
+            string unit = (string)_UpdateUnitDialogUnitTextField.Text;
+
+            _UpdateUnitDialogYesButton.Clicked -= ShowUpdateUnitDialogYes;
+            _UpdateUnitDialogNoButton.Clicked -= ShowUpdateUnitDialogNo;
+
+            _UpdateUnitDialog.SetFocus();
+
+            GetUpdateDeleteStatus status;
+
+            if (int.TryParse(id, out int check))
+            {
+                status = HTTPLogic.UpdateUnit(check, unit);
+
+                if (status.SuccessRet) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
+                else
+                {
+                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+
+                    if (result == 1)
+                    {
+                        MessageBox.Query("Справка", "1) Пожалуйста, удостоверьтесь в том, что клиент подключен к узлу информационной системы правильного формата (не БД).\n" +
+                            "2) Запись с идентичными значениями может уже быть записана на стороне сервера", "OK");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Query("Ошибка", "Неверный формат модели", "OK");
+            }
         }
 
         public static void ShowUpdateDescDialog()
@@ -588,12 +901,52 @@ namespace Client.Logic
 
         private static void ShowUpdateDescDialogYes()
         {
-            throw new NotImplementedException();
+            _UpdateDescriptionDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateDescriptionDialog);
+
+            string id = (string)_UpdateDescriptionDialogIdTextField.Text;
+            string desc = (string)_UpdateDescriptionDialogDescriptionTextField.Text;
+
+            _UpdateDescDialogYesButton.Clicked -= ShowUpdateDescDialogYes;
+            _UpdateDescDialogNoButton.Clicked -= ShowUpdateDescDialogNo;
+
+            _UpdateDescriptionDialog.SetFocus();
+
+            GetUpdateDeleteStatus status;
+
+            if (int.TryParse(id, out int check))
+            {
+                status = HTTPLogic.UpdateDescription(check, desc);
+
+                if (status.SuccessRet) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
+                else
+                {
+                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+
+                    if (result == 1)
+                    {
+                        MessageBox.Query("Справка", "1) Пожалуйста, удостоверьтесь в том, что клиент подключен к узлу информационной системы правильного формата (не БД).\n" +
+                            "2) Запись с идентичными значениями может уже быть записана на стороне сервера", "OK");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Query("Ошибка", "Неверный формат модели", "OK");
+            }
         }
 
         private static void ShowUpdateDescDialogNo()
         {
-            throw new NotImplementedException();
+            _UpdateDescriptionDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateDescriptionDialog);
+
+            _UpdateDescDialogYesButton.Clicked -= ShowUpdateDescDialogYes;
+            _UpdateDescDialogNoButton.Clicked -= ShowUpdateDescDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         public static void ShowUpdateOwnerDialog()
@@ -614,12 +967,52 @@ namespace Client.Logic
 
         private static void ShowUpdateOwnerDialogNo()
         {
-            throw new NotImplementedException();
+            _UpdateOwnerDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateOwnerDialog);
+
+            _UpdateOwnerDialogYesButton.Clicked -= ShowUpdateOwnerDialogYes;
+            _UpdateOwnerDialogNoButton.Clicked -= ShowUpdateOwnerDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowUpdateOwnerDialogYes()
         {
-            throw new NotImplementedException();
+            _UpdateOwnerDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateOwnerDialog);
+
+            string id = (string)_UpdateOwnerDialogIdTextField.Text;
+            string owner = (string)_UpdateOwnerDialogOwnerTextField.Text;
+
+            _UpdateOwnerDialogYesButton.Clicked -= ShowUpdateOwnerDialogYes;
+            _UpdateOwnerDialogNoButton.Clicked -= ShowUpdateOwnerDialogNo;
+
+            _UpdateOwnerDialog.SetFocus();
+
+            GetUpdateDeleteStatus status;
+
+            if (int.TryParse(id, out int check))
+            {
+                status = HTTPLogic.UpdateOwner(check, owner);
+
+                if (status.SuccessRet) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
+                else
+                {
+                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+
+                    if (result == 1)
+                    {
+                        MessageBox.Query("Справка", "1) Пожалуйста, удостоверьтесь в том, что клиент подключен к узлу информационной системы правильного формата (не БД).\n" +
+                            "2) Запись с идентичными значениями может уже быть записана на стороне сервера", "OK");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Query("Ошибка", "Неверный формат модели", "OK");
+            }
         }
 
         public static void ShowCreationDialog()
@@ -644,15 +1037,7 @@ namespace Client.Logic
 
         public static void ShowCreationDialogYes()
         {
-            _CreationDialog.Add(_CreationDialogStateField);
-            _CreationDialog.Add(_CreationDialogNameField);
-            _CreationDialog.Add(_CreationDialogQuantityField);
-            _CreationDialog.Add(_CreationDialogUnitField);
-            _CreationDialog.Add(_CreationDialogDescField);
-            _CreationDialog.Add(_CreationDialogOwnerField);
 
-            _CreationDialog.Add(_CreationDialogYesButton);
-            _CreationDialog.Add(_CreationDialogNoButton);
 
             string state = (string)_CreationDialogStateField.Text;
             string name = (string)_CreationDialogNameField.Text;
@@ -660,8 +1045,6 @@ namespace Client.Logic
             string unit = (string)_CreationDialogUnitField.Text;
             string desc = (string)_CreationDialogDescField.Text;
             string owner = (string)_CreationDialogOwnerField.Text;
-
-            WindowLogic.window.Add(_CreationDialog);
 
             _CreationDialogYesButton.Clicked -= ShowCreationDialogYes;
             _CreationDialogNoButton.Clicked -= ShowCreationDialogNo;

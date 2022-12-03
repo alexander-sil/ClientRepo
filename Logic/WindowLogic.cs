@@ -19,6 +19,12 @@ namespace Client.Logic
             Height = Dim.Fill()
         };
 
+        public static void UpdateView()
+        {
+            entryList.SetFocus();
+            entryList.MoveEnd();
+            entryList.MoveHome();
+        }
 
         // Стартовый метод
 
