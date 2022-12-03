@@ -7,9 +7,7 @@ namespace Client.Logic
 {
     public class MainLogic
     {
-        public static List<EntryOutModel> View { get; set; } = new List<EntryOutModel>();
-
-
+        public static List<EntryOutModel> EntryView { get; set; } = new List<EntryOutModel>();
     }
 }
 

@@ -12,7 +12,7 @@ using System.Text;
 
 namespace Client.Logic
 {
-    public class HTTPLogic
+    public static class HTTPLogic
     {
         public static string IP { get; set; } = "";
 
@@ -45,7 +45,7 @@ namespace Client.Logic
             return status;
         }
 
-        public GetUpdateDeleteStatus BindNewBorrower(int id, PersonInModel data)
+        public static GetUpdateDeleteStatus BindNewBorrower(int id, PersonInModel data)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -74,7 +74,7 @@ namespace Client.Logic
         }
 
 
-        public GetUpdateDeleteStatus UpdateBorrowerName(int id, string expression, string newName)
+        public static GetUpdateDeleteStatus UpdateBorrowerName(int id, string expression, string newName)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -108,7 +108,7 @@ namespace Client.Logic
             return status;
         }
 
-        public GetUpdateDeleteStatus UpdateBorrowerClass(int id, string expression, string className)
+        public static GetUpdateDeleteStatus UpdateBorrowerClass(int id, string expression, string className)
         {
 
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
@@ -144,7 +144,7 @@ namespace Client.Logic
 
         }
 
-        public GetUpdateDeleteStatus UpdateBorrowerBuilding(int id, string expression, string building)
+        public static GetUpdateDeleteStatus UpdateBorrowerBuilding(int id, string expression, string building)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -178,7 +178,7 @@ namespace Client.Logic
             return status;
         }
 
-        public GetUpdateDeleteStatus UnbindBorrower(int entryId, string expression)
+        public static GetUpdateDeleteStatus UnbindBorrower(int entryId, string expression)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -211,7 +211,7 @@ namespace Client.Logic
             return status;
         }
 
-        public (EntryOutModel, GetUpdateDeleteStatus) GetById(int id)
+        public static (EntryOutModel, GetUpdateDeleteStatus) GetById(int id)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -245,7 +245,7 @@ namespace Client.Logic
             return (model, status);
         }
 
-        public (List<EntryOutModel>, GetUpdateDeleteStatus) GetAll()
+        public static (List<EntryOutModel>, GetUpdateDeleteStatus) GetAll()
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -273,7 +273,7 @@ namespace Client.Logic
             return (models, status);
         }
 
-        public (List<EntryOutModel>, GetUpdateDeleteStatus) Search(string searchTerm)
+        public static (List<EntryOutModel>, GetUpdateDeleteStatus) Search(string searchTerm)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -307,7 +307,7 @@ namespace Client.Logic
             return (models, status);
         }
 
-        public GetUpdateDeleteStatus UpdateState(int id, string state)
+        public static GetUpdateDeleteStatus UpdateState(int id, string state)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -339,7 +339,7 @@ namespace Client.Logic
             return status;
         }
 
-        public GetUpdateDeleteStatus UpdateName(int id, string name)
+        public static GetUpdateDeleteStatus UpdateName(int id, string name)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -371,7 +371,7 @@ namespace Client.Logic
             return status;
         }
 
-        public GetUpdateDeleteStatus UpdateQuantity(int id, uint quantity)
+        public static GetUpdateDeleteStatus UpdateQuantity(int id, uint quantity)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -403,7 +403,7 @@ namespace Client.Logic
             return status;
         }
 
-        public GetUpdateDeleteStatus UpdateUnit(int id, string unit)
+        public static GetUpdateDeleteStatus UpdateUnit(int id, string unit)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -435,7 +435,7 @@ namespace Client.Logic
             return status;
         }
 
-        public GetUpdateDeleteStatus UpdateDescription(int id, string description)
+        public static GetUpdateDeleteStatus UpdateDescription(int id, string description)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -469,7 +469,7 @@ namespace Client.Logic
             return status;
         }
 
-        public GetUpdateDeleteStatus UpdateOwner(int id, string owner)
+        public static GetUpdateDeleteStatus UpdateOwner(int id, string owner)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -501,7 +501,7 @@ namespace Client.Logic
             return status;
         }
 
-        public GetUpdateDeleteStatus Delete(int id)
+        public static GetUpdateDeleteStatus Delete(int id)
         {
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
