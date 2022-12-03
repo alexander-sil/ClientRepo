@@ -449,6 +449,8 @@ namespace Client.Logic
                 }
             };
 
+            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
             HttpResponseMessage response = client.SendAsync(request).Result;
 
             if (!response.IsSuccessStatusCode)
