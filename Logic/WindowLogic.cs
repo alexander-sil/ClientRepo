@@ -28,7 +28,7 @@ namespace Client.Logic
             Console.Title = "REST Client";
 
             Application.Init();
-
+             
             top = Application.Top;
 
             #region УДАЛИТЬ ПРИ СБОРКЕ ПОД МАК!!!
