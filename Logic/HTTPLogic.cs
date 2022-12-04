@@ -1,6 +1,7 @@
 ﻿using Client.Helpers;
 using Client.Models;
 using System;
+using System.Globalization;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -21,6 +22,8 @@ namespace Client.Logic
 
         public static CreateStatus Create(EntryInModel data)
         {
+
+
             CreateStatus status = new CreateStatus();
             using HttpClient client = new HttpClient();
 
@@ -76,6 +79,8 @@ namespace Client.Logic
 
         public static GetUpdateDeleteStatus UpdateBorrowerName(int id, string expression, string newName)
         {
+            IdnMapping map = new IdnMapping();
+
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
 
@@ -85,8 +90,8 @@ namespace Client.Logic
                 {
 
                     { "id", new string[] { id.ToString() } },
-                    { "expression", new string[] { expression } },
-                    { "newName", new string[] { newName } }
+                    { "expression", new string[] { map.GetAscii(expression) } },
+                    { "newName", new string[] { map.GetAscii(newName) } }
                 }
             };
 
@@ -110,6 +115,7 @@ namespace Client.Logic
 
         public static GetUpdateDeleteStatus UpdateBorrowerClass(int id, string expression, string className)
         {
+            IdnMapping map = new IdnMapping();
 
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
@@ -120,8 +126,8 @@ namespace Client.Logic
                 {
 
                     { "id", new string[] { id.ToString() } },
-                    { "expression", new string[] { expression } },
-                    { "className", new string[] { className } }
+                    { "expression", new string[] { map.GetAscii(expression) } },
+                    { "className", new string[] { map.GetAscii(className) } }
                 }
             };
 
@@ -146,6 +152,8 @@ namespace Client.Logic
 
         public static GetUpdateDeleteStatus UpdateBorrowerBuilding(int id, string expression, string building)
         {
+            IdnMapping map = new IdnMapping();
+
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
 
@@ -155,8 +163,8 @@ namespace Client.Logic
                 {
 
                     { "id", new string[] { id.ToString() } },
-                    { "expression", new string[] { expression } },
-                    { "building", new string[] { building } }
+                    { "expression", new string[] { map.GetAscii(expression) } },
+                    { "building", new string[] { map.GetAscii(building) } }
                 }
             };
 
@@ -180,6 +188,8 @@ namespace Client.Logic
 
         public static GetUpdateDeleteStatus UnbindBorrower(int entryId, string expression)
         {
+            IdnMapping map = new IdnMapping();
+
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
 
@@ -189,7 +199,7 @@ namespace Client.Logic
                 {
 
                     { "entryId", new string[] { entryId.ToString() } },
-                    { "expression", new string[] { expression } }
+                    { "expression", new string[] { map.GetAscii(expression) } }
                 }
             };
 
@@ -275,6 +285,8 @@ namespace Client.Logic
 
         public static (List<EntryOutModel>, GetUpdateDeleteStatus) Search(string searchTerm)
         {
+            IdnMapping map = new IdnMapping();
+
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
 
@@ -282,7 +294,7 @@ namespace Client.Logic
             {
                 Headers =
                 {
-                    { "searchTerm", new string[] { searchTerm } }
+                    { "searchTerm", new string[] { map.GetAscii(searchTerm) } }
                 }
             };
 
@@ -309,6 +321,8 @@ namespace Client.Logic
 
         public static GetUpdateDeleteStatus UpdateState(int id, string state)
         {
+            IdnMapping map = new IdnMapping();
+
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
 
@@ -317,7 +331,7 @@ namespace Client.Logic
                 Headers =
                 {
                     { "id", new string[] { id.ToString() } },
-                    { "state", new string[] { state } }
+                    { "state", new string[] { map.GetAscii(state) } }
                 }
             };
 
@@ -341,6 +355,8 @@ namespace Client.Logic
 
         public static GetUpdateDeleteStatus UpdateName(int id, string name)
         {
+            IdnMapping map = new IdnMapping();
+
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
 
@@ -349,7 +365,7 @@ namespace Client.Logic
                 Headers =
                 {
                     { "id", new string[] { id.ToString() } },
-                    { "name", new string[] { name } }
+                    { "name", new string[] { map.GetAscii(name) } }
                 }
             };
 
@@ -373,6 +389,8 @@ namespace Client.Logic
 
         public static GetUpdateDeleteStatus UpdateQuantity(int id, uint quantity)
         {
+            IdnMapping map = new IdnMapping();
+
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
 
@@ -405,6 +423,8 @@ namespace Client.Logic
 
         public static GetUpdateDeleteStatus UpdateUnit(int id, string unit)
         {
+            IdnMapping map = new IdnMapping();
+
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
 
@@ -413,7 +433,7 @@ namespace Client.Logic
                 Headers =
                 {
                     { "id", new string[] { id.ToString() } },
-                    { "unit", new string[] { unit } }
+                    { "unit", new string[] { map.GetAscii(unit) } }
                 }
             };
 
@@ -437,6 +457,8 @@ namespace Client.Logic
 
         public static GetUpdateDeleteStatus UpdateDescription(int id, string description)
         {
+            IdnMapping map = new IdnMapping();
+
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
 
@@ -471,6 +493,8 @@ namespace Client.Logic
 
         public static GetUpdateDeleteStatus UpdateOwner(int id, string owner)
         {
+            IdnMapping map = new IdnMapping();
+
             GetUpdateDeleteStatus status = new GetUpdateDeleteStatus();
             using HttpClient client = new HttpClient();
 
@@ -479,7 +503,7 @@ namespace Client.Logic
                 Headers =
                 {
                     { "id", new string[] { id.ToString() } },
-                    { "owner", new string[] { owner } }
+                    { "owner", new string[] { map.GetAscii(owner) } }
                 }
             };
 
