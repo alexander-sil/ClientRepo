@@ -13,6 +13,7 @@ namespace Client
             catch (Exception ex)
             {
                 MessageBox.Query("Ошибка", $"Пожалуйста, обратитесь к системному администратору.\nСообщение для отладки: {ex.Message}", "OK");
+                WindowLogic.Execute();
             }
 
         }
