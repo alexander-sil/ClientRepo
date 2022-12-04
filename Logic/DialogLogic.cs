@@ -284,6 +284,9 @@ namespace Client.Logic
 
         private static void ShowConnectionDialogNo()
         {
+            _ConnectionDialogIPField.Text = "";
+            _ConnectionDialogPortField.Text = "";
+
             _ConnectionDialog.RemoveAll();
 
             WindowLogic.window.Remove(_ConnectionDialog);
@@ -298,6 +301,9 @@ namespace Client.Logic
         {
             string ip = (string)_ConnectionDialogIPField.Text;
             string port = (string)_ConnectionDialogPortField.Text;
+
+            _ConnectionDialogIPField.Text = "";
+            _ConnectionDialogPortField.Text = "";
 
             _ConnectionDialogYesButton.Clicked -= ShowConnectionDialogYes;
             _ConnectionDialogNoButton.Clicked -= ShowConnectionDialogNo;
@@ -334,6 +340,8 @@ namespace Client.Logic
 
         private static void ShowDeleteDialogNo()
         {
+            _DeleteDialogIdField.Text = "";
+
             _DeleteDialog.RemoveAll();
 
             WindowLogic.window.Remove(_DeleteDialog);
@@ -347,6 +355,8 @@ namespace Client.Logic
         private static void ShowDeleteDialogYes()
         {
             string id = (string)_DeleteDialogIdField.Text;
+
+            _DeleteDialogIdField.Text = "";
 
             _DeleteDialogYesButton.Clicked -= ShowDeleteDialogYes;
             _DeleteDialogNoButton.Clicked -= ShowDeleteDialogNo;
@@ -399,6 +409,12 @@ namespace Client.Logic
 
         private static void ShowNewBorrowerBindDialogNo()
         {
+
+            _NewBorrowerBindDialogBuildingField.Text = "";
+            _NewBorrowerBindDialogClassField.Text = "";
+            _NewBorrowerBindDialogNameField.Text = "";
+            _NewBorrowerBindDialogEntryIdField.Text = "";
+
             _NewBorrowerBindDialog.RemoveAll();
 
             WindowLogic.window.Remove(_NewBorrowerBindDialog);
@@ -415,6 +431,11 @@ namespace Client.Logic
             string name = (string)_NewBorrowerBindDialogNameField.Text;
             string _class = (string)_NewBorrowerBindDialogClassField.Text;
             string building = (string)_NewBorrowerBindDialogBuildingField.Text;
+
+            _NewBorrowerBindDialogBuildingField.Text = "";
+            _NewBorrowerBindDialogClassField.Text = "";
+            _NewBorrowerBindDialogNameField.Text = "";
+            _NewBorrowerBindDialogEntryIdField.Text = "";
 
             _NewBorrowerBindDialogYesButton.Clicked -= ShowNewBorrowerBindDialogYes;
             _NewBorrowerBindDialogNoButton.Clicked -= ShowNewBorrowerBindDialogNo;
@@ -480,6 +501,10 @@ namespace Client.Logic
             string expr = (string)_BorrowerNameUpdateDialogExpressionField.Text;
             string name = (string)_BorrowerNameUpdateDialogNameField.Text;
 
+            _BorrowerNameUpdateDialogIdField.Text = "";
+            _BorrowerNameUpdateDialogExpressionField.Text = "";
+            _BorrowerNameUpdateDialogNameField.Text = "";
+
             _BorrowerNameUpdateDialogYesButton.Clicked -= ShowBorrowerNameUpdateDialogYes;
             _BorrowerNameUpdateDialogNoButton.Clicked -= ShowBorrowerNameUpdateDialogNo;
 
@@ -519,6 +544,10 @@ namespace Client.Logic
 
         private static void ShowBorrowerNameUpdateDialogNo()
         {
+            _BorrowerNameUpdateDialogIdField.Text = "";
+            _BorrowerNameUpdateDialogExpressionField.Text = "";
+            _BorrowerNameUpdateDialogNameField.Text = "";
+
             _BorrowerNameUpdateDialog.RemoveAll();
 
             WindowLogic.window.Remove(_BorrowerNameUpdateDialog);
@@ -548,6 +577,10 @@ namespace Client.Logic
 
         private static void ShowBorrowerClassUpdateDialogNo()
         {
+            _BorrowerClassUpdateDialogIdField.Text = "";
+            _BorrowerClassUpdateDialogExpressionField.Text = "";
+            _BorrowerClassUpdateDialogClassField.Text = "";
+
             _BorrowerClassUpdateDialog.RemoveAll();
 
             WindowLogic.window.Remove(_BorrowerClassUpdateDialog);
@@ -567,6 +600,10 @@ namespace Client.Logic
             string id = (string)_BorrowerClassUpdateDialogIdField.Text;
             string expr = (string)_BorrowerClassUpdateDialogExpressionField.Text;
             string _class = (string)_BorrowerClassUpdateDialogClassField.Text;
+
+            _BorrowerClassUpdateDialogIdField.Text = "";
+            _BorrowerClassUpdateDialogExpressionField.Text = "";
+            _BorrowerClassUpdateDialogClassField.Text = "";
 
             _BorrowerClassUpdateDialogYesButton.Clicked -= ShowBorrowerClassUpdateDialogYes;
             _BorrowerClassUpdateDialogNoButton.Clicked -= ShowBorrowerClassUpdateDialogNo;
@@ -623,7 +660,11 @@ namespace Client.Logic
         }
 
         private static void ShowBorrowerBuildingUpdateDialogNo()
-        {
+        {   
+            _BorrowerBuildingUpdateDialogIdField.Text = "";
+            _BorrowerBuildingUpdateDialogExpressionField.Text = "";
+            _BorrowerBuildingUpdateDialogBuildingField.Text = "";
+
             _BorrowerBuildingUpdateDialog.RemoveAll();
 
             WindowLogic.window.Remove(_BorrowerBuildingUpdateDialog);
@@ -643,6 +684,10 @@ namespace Client.Logic
             string id = (string)_BorrowerBuildingUpdateDialogIdField.Text;
             string expr = (string)_BorrowerBuildingUpdateDialogExpressionField.Text;
             string build = (string)_BorrowerBuildingUpdateDialogBuildingField.Text;
+
+            _BorrowerBuildingUpdateDialogIdField.Text = "";
+            _BorrowerBuildingUpdateDialogExpressionField.Text = "";
+            _BorrowerBuildingUpdateDialogBuildingField.Text = "";
 
             _BorrowerBuildingUpdateDialogYesButton.Clicked -= ShowBorrowerBuildingUpdateDialogYes;
             _BorrowerBuildingUpdateDialogNoButton.Clicked -= ShowBorrowerBuildingUpdateDialogNo;
@@ -699,6 +744,9 @@ namespace Client.Logic
 
         private static void ShowBorrowerDeleteDialogNo()
         {
+            _BorrowerDeleteDialogExpressionField.Text = "";
+            _BorrowerDeleteDialogIdField.Text = "";
+
             _BorrowerDeletionDialog.RemoveAll();
 
             WindowLogic.window.Remove(_BorrowerDeletionDialog);
@@ -717,6 +765,9 @@ namespace Client.Logic
 
             string id = (string)_BorrowerDeleteDialogIdField.Text;
             string expr = (string)_BorrowerDeleteDialogExpressionField.Text;
+
+            _BorrowerDeleteDialogExpressionField.Text = "";
+            _BorrowerDeleteDialogIdField.Text = "";
 
             _BorrowerDeleteDialogYesButton.Clicked -= ShowBorrowerDeleteDialogYes;
             _BorrowerDeleteDialogNoButton.Clicked -= ShowBorrowerDeleteDialogNo;
@@ -756,6 +807,9 @@ namespace Client.Logic
 
         public static void ShowGetByIdDialog()
         {
+            
+            _BorrowerClassUpdateDialogIdField.Text = "";
+
             _GetByIdDialog.Add(_GetByIdDialogIdField);
 
             _GetByIdDialog.Add(_GetByIdDialogYesButton);
@@ -771,6 +825,8 @@ namespace Client.Logic
 
         private static void ShowGetByIdDialogNo()
         {
+            _GetByIdDialogIdField.Text = "";
+
             _GetByIdDialog.RemoveAll();
 
             WindowLogic.window.Remove(_GetByIdDialog);
@@ -788,6 +844,8 @@ namespace Client.Logic
             WindowLogic.window.Remove(_GetByIdDialog);
 
             string id = (string)_GetByIdDialogIdField.Text;
+
+            _GetByIdDialogIdField.Text = "";
 
             _GetByIdDialogYesButton.Clicked -= ShowGetByIdDialogYes;
             _GetByIdDialogNoButton.Clicked -= ShowGetByIdDialogNo;
@@ -943,6 +1001,8 @@ namespace Client.Logic
 
         private static void ShowSearchDialogNo()
         {
+            _SearchDialogTermTextField.Text = "";
+
             _SearchDialog.RemoveAll();
 
             WindowLogic.window.Remove(_SearchDialog);
@@ -960,6 +1020,8 @@ namespace Client.Logic
             WindowLogic.window.Remove(_SearchDialog);
 
             string term = (string)_SearchDialogTermTextField.Text;
+
+            _SearchDialogTermTextField.Text = "";
 
             _SearchDialogYesButton.Clicked -= ShowSearchDialogYes;
             _SearchDialogNoButton.Clicked -= ShowSearchDialogNo;
@@ -1020,6 +1082,9 @@ namespace Client.Logic
 
         private static void ShowUpdateStateDialogNo()
         {
+            _UpdateStateDialogIdTextField.Text = "";
+            _UpdateStateDialogStateTextField.Text = "";
+
             _UpdateStateDialog.RemoveAll();
 
             WindowLogic.window.Remove(_UpdateStateDialog);
@@ -1038,6 +1103,9 @@ namespace Client.Logic
 
             string id = (string)_UpdateStateDialogIdTextField.Text;
             string state = (string)_UpdateStateDialogStateTextField.Text;
+
+            _UpdateStateDialogIdTextField.Text = "";
+            _UpdateStateDialogStateTextField.Text = "";
 
             _UpdateStateDialogYesButton.Clicked -= ShowUpdateStateDialogYes;
             _UpdateStateDialogNoButton.Clicked -= ShowUpdateStateDialogNo;
@@ -1088,6 +1156,9 @@ namespace Client.Logic
 
         private static void ShowUpdateNameDialogNo()
         {
+            _UpdateNameDialogIdTextField.Text = "";
+            _UpdateNameDialogNameTextField.Text = "";
+
             _UpdateNameDialog.RemoveAll();
 
             WindowLogic.window.Remove(_UpdateNameDialog);
@@ -1107,6 +1178,9 @@ namespace Client.Logic
 
             string id = (string)_UpdateNameDialogIdTextField.Text;
             string name = (string)_UpdateNameDialogNameTextField.Text;
+
+            _UpdateNameDialogIdTextField.Text = "";
+            _UpdateNameDialogNameTextField.Text = "";
 
             _UpdateNameDialogYesButton.Clicked -= ShowUpdateNameDialogYes;
             _UpdateNameDialogNoButton.Clicked -= ShowUpdateNameDialogNo;
@@ -1158,6 +1232,9 @@ namespace Client.Logic
 
         private static void ShowUpdateQuantityDialogNo()
         {
+            _UpdateQuantityDialogIdTextField.Text = "";
+            _UpdateQuantityDialogQuantityTextField.Text = "";
+
             _UpdateQuantityDialog.RemoveAll();
 
             WindowLogic.window.Remove(_UpdateQuantityDialog);
@@ -1176,6 +1253,9 @@ namespace Client.Logic
 
             string id = (string)_UpdateQuantityDialogIdTextField.Text;
             string quantity = (string)_UpdateQuantityDialogQuantityTextField.Text;
+
+            _UpdateQuantityDialogIdTextField.Text = "";
+            _UpdateQuantityDialogQuantityTextField.Text = "";
 
             _UpdateQuantityDialogYesButton.Clicked -= ShowUpdateQuantityDialogYes;
             _UpdateQuantityDialogNoButton.Clicked -= ShowUpdateQuantityDialogNo;
@@ -1226,6 +1306,10 @@ namespace Client.Logic
 
         private static void ShowUpdateUnitDialogNo()
         {
+            
+            _UpdateUnitDialogIdTextField.Text = "";
+            _UpdateUnitDialogUnitTextField.Text = "";
+
             _UpdateUnitDialog.RemoveAll();
 
             WindowLogic.window.Remove(_UpdateUnitDialog);
@@ -1244,6 +1328,9 @@ namespace Client.Logic
 
             string id = (string)_UpdateUnitDialogIdTextField.Text;
             string unit = (string)_UpdateUnitDialogUnitTextField.Text;
+
+            _UpdateUnitDialogIdTextField.Text = "";
+            _UpdateUnitDialogUnitTextField.Text = "";
 
             _UpdateUnitDialogYesButton.Clicked -= ShowUpdateUnitDialogYes;
             _UpdateUnitDialogNoButton.Clicked -= ShowUpdateUnitDialogNo;
@@ -1301,6 +1388,9 @@ namespace Client.Logic
             string id = (string)_UpdateDescriptionDialogIdTextField.Text;
             string desc = (string)_UpdateDescriptionDialogDescriptionTextField.Text;
 
+            _UpdateDescriptionDialogIdTextField.Text = "";
+            _UpdateDescriptionDialogDescriptionTextField.Text = "";
+
             _UpdateDescDialogYesButton.Clicked -= ShowUpdateDescDialogYes;
             _UpdateDescDialogNoButton.Clicked -= ShowUpdateDescDialogNo;
 
@@ -1334,6 +1424,9 @@ namespace Client.Logic
 
         private static void ShowUpdateDescDialogNo()
         {
+            _UpdateDescriptionDialogIdTextField.Text = "";
+            _UpdateDescriptionDialogDescriptionTextField.Text = "";
+
             _UpdateDescriptionDialog.RemoveAll();
 
             WindowLogic.window.Remove(_UpdateDescriptionDialog);
@@ -1362,6 +1455,9 @@ namespace Client.Logic
 
         private static void ShowUpdateOwnerDialogNo()
         {
+            _UpdateOwnerDialogIdTextField.Text = "";
+            _UpdateOwnerDialogOwnerTextField.Text = "";
+
             _UpdateOwnerDialog.RemoveAll();
 
             WindowLogic.window.Remove(_UpdateOwnerDialog);
@@ -1380,6 +1476,9 @@ namespace Client.Logic
 
             string id = (string)_UpdateOwnerDialogIdTextField.Text;
             string owner = (string)_UpdateOwnerDialogOwnerTextField.Text;
+
+            _UpdateOwnerDialogIdTextField.Text = "";
+            _UpdateOwnerDialogOwnerTextField.Text = "";
 
             _UpdateOwnerDialogYesButton.Clicked -= ShowUpdateOwnerDialogYes;
             _UpdateOwnerDialogNoButton.Clicked -= ShowUpdateOwnerDialogNo;
@@ -1442,6 +1541,13 @@ namespace Client.Logic
             string desc = (string)_CreationDialogDescField.Text;
             string owner = (string)_CreationDialogOwnerField.Text;
 
+            _CreationDialogStateField.Text = "";
+            _CreationDialogNameField.Text = "";
+            _CreationDialogQuantityField.Text = "";
+            _CreationDialogUnitField.Text = "";
+            _CreationDialogDescField.Text = "";
+            _CreationDialogOwnerField.Text = "";
+
             _CreationDialogYesButton.Clicked -= ShowCreationDialogYes;
             _CreationDialogNoButton.Clicked -= ShowCreationDialogNo;
 
@@ -1484,6 +1590,13 @@ namespace Client.Logic
 
         public static void ShowCreationDialogNo()
         {
+            _CreationDialogStateField.Text = "";
+            _CreationDialogNameField.Text = "";
+            _CreationDialogQuantityField.Text = "";
+            _CreationDialogUnitField.Text = "";
+            _CreationDialogDescField.Text = "";
+            _CreationDialogOwnerField.Text = "";
+
             _CreationDialog.RemoveAll();
 
             WindowLogic.window.Remove(_CreationDialog);
