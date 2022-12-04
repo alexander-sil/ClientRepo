@@ -71,7 +71,7 @@ namespace Client.Logic
 
         public static TextField _CreationDialogStateField = new TextField(2, 2, 25, "Состояние");
 
-        public static TextField _CreationDialogNameField = new TextField(2, 4, 25, "Навзание");
+        public static TextField _CreationDialogNameField = new TextField(2, 4, 25, "Название");
 
         public static TextField _CreationDialogQuantityField = new TextField(2, 6, 25, "Количество");
 
