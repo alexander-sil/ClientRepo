@@ -11,7 +11,7 @@ namespace Client.Logic
 
         public static Window _ConnectionDialog = new Window(new Rect(7, 7, 70, 16), "Подключение к серверу");
 
-        public static Window _CreationDialog = new Window(new Rect(7, 7, 70, 32), "Создать запись о мелком предмете");
+        public static Window _CreationDialog = new Window(new Rect(7, 7, 70, 19), "Создать запись о мелком предмете");
 
         public static Window _NewBorrowerBindDialog = new Window(new Rect(7, 7, 70, 16), "Создать запись об учащемся, взявшем мелкий предмет");
 
@@ -47,11 +47,11 @@ namespace Client.Logic
 
         #region DeleteDialogCtrls
 
-        public static TextField _DeleteDialogIdField = new TextField("Магическое число записи");
+        public static TextField _DeleteDialogIdField = new TextField(2, 2, 35, "Магическое число записи");
 
-        public static Button _DeleteDialogYesButton = new Button("Отправить");
+        public static Button _DeleteDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _DeleteDialogNoButton = new Button("Отменить");
+        public static Button _DeleteDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
@@ -61,207 +61,209 @@ namespace Client.Logic
 
         public static TextField _ConnectionDialogPortField = new TextField(2, 4, 25, "Порт REST-сервера");
 
-        public static Button _ConnectionDialogYesButton = new Button(2, 8, "Подключение");
+        public static Button _ConnectionDialogYesButton = new Button(2, 12, "Подключение");
 
-        public static Button _ConnectionDialogNoButton = new Button(2, 10, "Отменить");
+        public static Button _ConnectionDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region CreationDialogCtrls
 
-        public static TextField _CreationDialogStateField = new TextField("Состояние");
+        public static TextField _CreationDialogStateField = new TextField(2, 2, 25, "Состояние");
 
-        public static TextField _CreationDialogNameField = new TextField("Навзание");
+        public static TextField _CreationDialogNameField = new TextField(2, 4, 25, "Навзание");
 
-        public static TextField _CreationDialogQuantityField = new TextField("Количество");
+        public static TextField _CreationDialogQuantityField = new TextField(2, 6, 25, "Количество");
 
-        public static TextField _CreationDialogUnitField = new TextField("Единица измерения");
+        public static TextField _CreationDialogUnitField = new TextField(2, 8, 25, "Единица измерения");
 
-        public static TextField _CreationDialogDescField = new TextField("Описание");
+        public static TextField _CreationDialogDescField = new TextField(2, 10, 25, "Описание");
 
-        public static TextField _CreationDialogOwnerField = new TextField("Имя владельца");
+        public static TextField _CreationDialogOwnerField = new TextField(2, 12, 25, "Имя владельца");
 
-        public static Button _CreationDialogYesButton = new Button("Отправить");
+        public static Button _CreationDialogYesButton = new Button(2, 14, "Отправить");
 
-        public static Button _CreationDialogNoButton = new Button("Отменить");
+        public static Button _CreationDialogNoButton = new Button(2, 15, "Отменить");
 
         #endregion
 
         #region NewBorrowerBindCtrls
 
-        public static TextField _NewBorrowerBindDialogEntryIdField = new TextField("Магическое число мелкого предмета");
+        public static TextField _NewBorrowerBindDialogEntryIdField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _NewBorrowerBindDialogNameField = new TextField("Имя учащегося");
+        public static TextField _NewBorrowerBindDialogNameField = new TextField(2, 4, 25, "Имя учащегося");
 
-        public static TextField _NewBorrowerBindDialogClassField = new TextField("Параллель/класс");
+        public static TextField _NewBorrowerBindDialogClassField = new TextField(2, 6, 25, "Параллель/класс");
 
-        public static TextField _NewBorrowerBindDialogBuildingField = new TextField("Здание");
+        public static TextField _NewBorrowerBindDialogBuildingField = new TextField(2, 8, 25, "Здание");
 
-        public static Button _NewBorrowerBindDialogYesButton = new Button("Отправить");
+        public static Button _NewBorrowerBindDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _NewBorrowerBindDialogNoButton = new Button("Отменить");
+        public static Button _NewBorrowerBindDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region BorrowerNameUpdateCtrls
 
-        public static TextField _BorrowerNameUpdateDialogIdField = new TextField("Магическое число мелкого предмета");
+        public static TextField _BorrowerNameUpdateDialogIdField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _BorrowerNameUpdateDialogExpressionField = new TextField("Выражение");
+        public static TextField _BorrowerNameUpdateDialogExpressionField = new TextField(2, 4, 25, "Выражение");
 
-        public static TextField _BorrowerNameUpdateDialogNameField = new TextField("Новое имя");
+        public static TextField _BorrowerNameUpdateDialogNameField = new TextField(2, 6, 25, "Новое имя");
 
-        public static Button _BorrowerNameUpdateDialogYesButton = new Button("Отправить");
+        public static Button _BorrowerNameUpdateDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _BorrowerNameUpdateDialogNoButton = new Button("Отменить");
+        public static Button _BorrowerNameUpdateDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region BorrowerClassUpdateCtrls
 
-        public static TextField _BorrowerClassUpdateDialogIdField = new TextField("Магическое число мелкого предмета");
+        public static TextField _BorrowerClassUpdateDialogIdField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _BorrowerClassUpdateDialogExpressionField = new TextField("Выражение");
+        public static TextField _BorrowerClassUpdateDialogExpressionField = new TextField(2, 4, 35, "Выражение");
 
-        public static TextField _BorrowerClassUpdateDialogClassField = new TextField("Новое значение поля класса");
+        public static TextField _BorrowerClassUpdateDialogClassField = new TextField(2, 6, 35, "Новое значение поля класса");
 
-        public static Button _BorrowerClassUpdateDialogYesButton = new Button("Отправить");
+        public static Button _BorrowerClassUpdateDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _BorrowerClassUpdateDialogNoButton = new Button("Отменить");
+        public static Button _BorrowerClassUpdateDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region BorrowerBuildingUpdateCtrls
 
-        public static TextField _BorrowerBuildingUpdateDialogIdField = new TextField("Магическое число мелкого предмета");
+        public static TextField _BorrowerBuildingUpdateDialogIdField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _BorrowerBuildingUpdateDialogExpressionField = new TextField("Выражение");
+        public static TextField _BorrowerBuildingUpdateDialogExpressionField = new TextField(2, 4, 35, "Выражение");
 
-        public static TextField _BorrowerBuildingUpdateDialogBuildingField = new TextField("Новое значение поля здания");
+        public static TextField _BorrowerBuildingUpdateDialogBuildingField = new TextField(2, 6, 35, "Новое значение поля здания");
 
-        public static Button _BorrowerBuildingUpdateDialogYesButton = new Button("Отправить");
+        public static Button _BorrowerBuildingUpdateDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _BorrowerBuildingUpdateDialogNoButton = new Button("Отменить");
+        public static Button _BorrowerBuildingUpdateDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region BorrowerDeleteCtrls
 
-        public static TextField _BorrowerDeleteDialogIdField = new TextField("Магическое число мелкого предмета");
+        public static TextField _BorrowerDeleteDialogIdField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _BorrowerDeleteDialogExpressionField = new TextField("Выражение");
+        public static TextField _BorrowerDeleteDialogExpressionField = new TextField(2, 4, 35, "Выражение");
 
-        public static Button _BorrowerDeleteDialogYesButton = new Button("Отправить");
+        public static Button _BorrowerDeleteDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _BorrowerDeleteDialogNoButton = new Button("Отменить");
+        public static Button _BorrowerDeleteDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region GetByIdControls
 
-        public static TextField _GetByIdDialogIdField = new TextField("Магическое число мелкого предмета");
+        public static TextField _GetByIdDialogIdField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static Button _GetByIdDialogYesButton = new Button("Отправить");
+        public static Button _GetByIdDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _GetByIdDialogNoButton = new Button("Отменить");
+        public static Button _GetByIdDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region GetAllControls
 
-        public static Label _GetAllDialogServiceLabel = new Label("Отправить запрос на получение всех записей?");
+        public static Label _GetAllDialogServiceLabel = new Label(2, 2, "Отправить запрос на получение всех записей?");
 
-        public static Button _GetAllDialogYesButton = new Button("Отправить");
+        public static Button _GetAllDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _GetAllDialogNoButton = new Button("Отменить");
+        public static Button _GetAllDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region SearchControls
 
-        public static TextField _SearchDialogTermTextField = new TextField("Поисковый запрос");
+        public static TextField _SearchDialogTermTextField = new TextField(2, 2, 25, "Поисковый запрос");
 
-        public static Button _SearchDialogYesButton = new Button("Отправить");
+        public static Button _SearchDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _SearchDialogNoButton = new Button("Отменить");
+        public static Button _SearchDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region UpdateStateControls
 
-        public static TextField _UpdateStateDialogIdTextField = new TextField("Магическое число мелкого предмета");
+        public static TextField _UpdateStateDialogIdTextField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _UpdateStateDialogStateTextField = new TextField("Новое значение поля состояния");
+        public static TextField _UpdateStateDialogStateTextField = new TextField(2, 4, 35, "Новое значение поля состояния");
 
-        public static Button _UpdateStateDialogYesButton = new Button("Отправить");
+        public static Button _UpdateStateDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _UpdateStateDialogNoButton = new Button("Отменить");
+        public static Button _UpdateStateDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region UpdateNameControls
 
-        public static TextField _UpdateNameDialogIdTextField = new TextField("Магическое число мелкого предмета");
+        public static TextField _UpdateNameDialogIdTextField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _UpdateNameDialogNameTextField = new TextField("Новое значение поля названия");
+        public static TextField _UpdateNameDialogNameTextField = new TextField(2, 4, 35, "Новое значение поля названия");
 
-        public static Button _UpdateNameDialogYesButton = new Button("Отправить");
+        public static Button _UpdateNameDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _UpdateNameDialogNoButton = new Button("Отменить");
+        public static Button _UpdateNameDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region UpdateQuantityControls
 
-        public static TextField _UpdateQuantityDialogIdTextField = new TextField("Магическое число мелкого предмета");
+        public static TextField _UpdateQuantityDialogIdTextField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _UpdateQuantityDialogQuantityTextField = new TextField("Новое значение поля количества");
+        public static TextField _UpdateQuantityDialogQuantityTextField = new TextField(2, 4, 35, "Новое значение поля количества");
 
-        public static Button _UpdateQuantityDialogYesButton = new Button("Отправить");
+        public static Button _UpdateQuantityDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _UpdateQuantityDialogNoButton = new Button("Отменить");
+        public static Button _UpdateQuantityDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region UpdateUnitControls
 
-        public static TextField _UpdateUnitDialogIdTextField = new TextField("Магическое число мелкого предмета");
+        public static TextField _UpdateUnitDialogIdTextField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _UpdateUnitDialogUnitTextField = new TextField("Новое значение поля единицы измерения");
+        public static TextField _UpdateUnitDialogUnitTextField = new TextField(2, 4, 8, "Единица");
 
-        public static Button _UpdateUnitDialogYesButton = new Button("Отправить");
+        public static Button _UpdateUnitDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _UpdateUnitDialogNoButton = new Button("Отменить");
+        public static Button _UpdateUnitDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region UpdateDescriptionControls
 
-        public static TextField _UpdateDescriptionDialogIdTextField = new TextField("Магическое число мелкого предмета");
+        public static TextField _UpdateDescriptionDialogIdTextField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _UpdateDescriptionDialogDescriptionTextField = new TextField("Новое значение поля описания");
+        public static TextField _UpdateDescriptionDialogDescriptionTextField = new TextField(2, 4, 35, "Новое значение поля описания");
 
-        public static Button _UpdateDescDialogYesButton = new Button("Отправить");
+        public static Button _UpdateDescDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _UpdateDescDialogNoButton = new Button("Отменить");
+        public static Button _UpdateDescDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
         #region UpdateOwnerControls
 
-        public static TextField _UpdateOwnerDialogIdTextField = new TextField("Магическое число мелкого предмета");
+        public static TextField _UpdateOwnerDialogIdTextField = new TextField(2, 2, 35, "Магическое число мелкого предмета");
 
-        public static TextField _UpdateOwnerDialogOwnerTextField = new TextField("Новое значение поля владельца");
+        public static TextField _UpdateOwnerDialogOwnerTextField = new TextField(2, 4, 35, "Новое значение поля владельца");
 
-        public static Button _UpdateOwnerDialogYesButton = new Button("Отправить");
+        public static Button _UpdateOwnerDialogYesButton = new Button(2, 12, "Отправить");
 
-        public static Button _UpdateOwnerDialogNoButton = new Button("Отменить");
+        public static Button _UpdateOwnerDialogNoButton = new Button(2, 13, "Отменить");
 
         #endregion
 
+        #region Methods
+
         public static void ShowAboutDialog()
         {
-            MessageBox.Query("О программе", "Клиент информационной системы\nВерсия 1.0\n(C) Александр Силицкий и Павел Шмачилин\n2022 г.", "OK");
+            MessageBox.Query("О программе", "Информационная система\nКлиент\nВерсия 1.0\n(C) Александр Силицкий и Павел Шмачилин\n2022 г.", "OK");
         }
 
         public static void ShowConnectionDialog()
@@ -1485,6 +1487,8 @@ namespace Client.Logic
 
             WindowLogic.window.SetFocus();
         }
+
+        #endregion
     }
 }
 

@@ -6,7 +6,7 @@ namespace Client.Logic
     {
         // Общедоступные компоненты
 
-        public static Label getResults = new Label("Результаты запроса");
+        public static Label getResults = new Label(" Работа");
 
         public static Window window = new Window("Клиент информационной системы")
         {
