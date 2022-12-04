@@ -11,7 +11,7 @@ namespace Client.Logic
 
         public static Window _ConnectionDialog = new Window(new Rect(7, 7, 70, 16), "Подключение к серверу");
 
-        public static Window _CreationDialog = new Window(new Rect(7, 7, 70, 16), "Создать запись о мелком предмете");
+        public static Window _CreationDialog = new Window(new Rect(7, 7, 70, 32), "Создать запись о мелком предмете");
 
         public static Window _NewBorrowerBindDialog = new Window(new Rect(7, 7, 70, 16), "Создать запись об учащемся, взявшем мелкий предмет");
 
@@ -57,13 +57,13 @@ namespace Client.Logic
 
         #region ConnectionDialogCtrls
 
-        public static TextField _ConnectionDialogIPField = new TextField("IP-адрес REST-сервера");
+        public static TextField _ConnectionDialogIPField = new TextField(2, 2, 25, "IP-адрес REST-сервера");
 
-        public static TextField _ConnectionDialogPortField = new TextField("Порт REST-сервера");
+        public static TextField _ConnectionDialogPortField = new TextField(2, 4, 25, "Порт REST-сервера");
 
-        public static Button _ConnectionDialogYesButton = new Button("Подключение");
+        public static Button _ConnectionDialogYesButton = new Button(2, 8, "Подключение");
 
-        public static Button _ConnectionDialogNoButton = new Button("Отменить");
+        public static Button _ConnectionDialogNoButton = new Button(2, 10, "Отменить");
 
         #endregion
 
@@ -259,7 +259,53 @@ namespace Client.Logic
 
         #endregion
 
+        public static void ShowAboutDialog()
+        {
+            MessageBox.Query("О программе", "Клиент информационной системы\nВерсия 1.0\n(C) Александр Силицкий и Павел Шмачилин\n2022 г.", "OK");
+        }
 
+        public static void ShowConnectionDialog()
+        {
+            _ConnectionDialog.Add(_ConnectionDialogIPField);
+            _ConnectionDialog.Add(_ConnectionDialogPortField);
+
+            _ConnectionDialog.Add(_ConnectionDialogYesButton);
+            _ConnectionDialog.Add(_ConnectionDialogNoButton);
+
+            WindowLogic.window.Add(_ConnectionDialog);
+
+            _ConnectionDialogYesButton.Clicked += ShowConnectionDialogYes;
+            _ConnectionDialogNoButton.Clicked += ShowConnectionDialogNo;
+
+            _ConnectionDialog.SetFocus();
+        }
+
+        private static void ShowConnectionDialogNo()
+        {
+            _ConnectionDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_ConnectionDialog);
+
+            _ConnectionDialogYesButton.Clicked -= ShowConnectionDialogYes;
+            _ConnectionDialogNoButton.Clicked -= ShowConnectionDialogNo;
+
+            WindowLogic.window.SetFocus();
+        }
+
+        private static void ShowConnectionDialogYes()
+        {
+            string ip = (string)_ConnectionDialogIPField.Text;
+            string port = (string)_ConnectionDialogPortField.Text;
+
+            if (ushort.TryParse(port, out ushort check))
+            {
+                HTTPLogic.IP = ip;
+                HTTPLogic.Port = check;
+            } else
+            {
+                MessageBox.Query("Ошибка", "Неправильный формат числа порта", "OK");
+            }
+        }
 
         public static void ShowDeleteDialog()
         {
@@ -278,7 +324,14 @@ namespace Client.Logic
 
         private static void ShowDeleteDialogNo()
         {
-            throw new NotImplementedException();
+            _DeleteDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_DeleteDialog);
+
+            _DeleteDialogYesButton.Clicked -= ShowDeleteDialogYes;
+            _DeleteDialogNoButton.Clicked -= ShowDeleteDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowDeleteDialogYes()
@@ -288,7 +341,9 @@ namespace Client.Logic
             _DeleteDialogYesButton.Clicked -= ShowDeleteDialogYes;
             _DeleteDialogNoButton.Clicked -= ShowDeleteDialogNo;
 
-            _DeleteDialog.SetFocus();
+            _DeleteDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_DeleteDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -334,7 +389,14 @@ namespace Client.Logic
 
         private static void ShowNewBorrowerBindDialogNo()
         {
-            throw new NotImplementedException();
+            _NewBorrowerBindDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_NewBorrowerBindDialog);
+
+            _NewBorrowerBindDialogYesButton.Clicked -= ShowNewBorrowerBindDialogYes;
+            _NewBorrowerBindDialogNoButton.Clicked -= ShowNewBorrowerBindDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowNewBorrowerBindDialogYes()
@@ -347,7 +409,9 @@ namespace Client.Logic
             _NewBorrowerBindDialogYesButton.Clicked -= ShowNewBorrowerBindDialogYes;
             _NewBorrowerBindDialogNoButton.Clicked -= ShowNewBorrowerBindDialogNo;
 
-            _NewBorrowerBindDialog.SetFocus();
+            _NewBorrowerBindDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_NewBorrowerBindDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -409,7 +473,9 @@ namespace Client.Logic
             _BorrowerNameUpdateDialogYesButton.Clicked -= ShowBorrowerNameUpdateDialogYes;
             _BorrowerNameUpdateDialogNoButton.Clicked -= ShowBorrowerNameUpdateDialogNo;
 
-            _BorrowerNameUpdateDialog.SetFocus();
+            _BorrowerNameUpdateDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_BorrowerNameUpdateDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -443,7 +509,14 @@ namespace Client.Logic
 
         private static void ShowBorrowerNameUpdateDialogNo()
         {
-            throw new NotImplementedException();
+            _BorrowerNameUpdateDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_BorrowerNameUpdateDialog);
+
+            _BorrowerNameUpdateDialogYesButton.Clicked -= ShowBorrowerNameUpdateDialogYes;
+            _BorrowerNameUpdateDialogNoButton.Clicked -= ShowBorrowerNameUpdateDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         public static void ShowBorrowerClassUpdateDialog()
@@ -465,7 +538,14 @@ namespace Client.Logic
 
         private static void ShowBorrowerClassUpdateDialogNo()
         {
-            throw new NotImplementedException();
+            _BorrowerClassUpdateDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_BorrowerClassUpdateDialog);
+
+            _BorrowerClassUpdateDialogYesButton.Clicked -= ShowBorrowerClassUpdateDialogYes;
+            _BorrowerClassUpdateDialogNoButton.Clicked -= ShowBorrowerClassUpdateDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowBorrowerClassUpdateDialogYes()
@@ -481,7 +561,9 @@ namespace Client.Logic
             _BorrowerClassUpdateDialogYesButton.Clicked -= ShowBorrowerClassUpdateDialogYes;
             _BorrowerClassUpdateDialogNoButton.Clicked -= ShowBorrowerClassUpdateDialogNo;
 
-            _BorrowerClassUpdateDialog.SetFocus();
+            _BorrowerClassUpdateDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_BorrowerClassUpdateDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -532,7 +614,14 @@ namespace Client.Logic
 
         private static void ShowBorrowerBuildingUpdateDialogNo()
         {
-            throw new NotImplementedException();
+            _BorrowerBuildingUpdateDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_BorrowerBuildingUpdateDialog);
+
+            _BorrowerBuildingUpdateDialogYesButton.Clicked -= ShowBorrowerBuildingUpdateDialogYes;
+            _BorrowerBuildingUpdateDialogNoButton.Clicked -= ShowBorrowerBuildingUpdateDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowBorrowerBuildingUpdateDialogYes()
@@ -548,7 +637,9 @@ namespace Client.Logic
             _BorrowerBuildingUpdateDialogYesButton.Clicked -= ShowBorrowerBuildingUpdateDialogYes;
             _BorrowerBuildingUpdateDialogNoButton.Clicked -= ShowBorrowerBuildingUpdateDialogNo;
 
-            _BorrowerBuildingUpdateDialog.SetFocus();
+            _BorrowerBuildingUpdateDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_BorrowerBuildingUpdateDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -598,7 +689,14 @@ namespace Client.Logic
 
         private static void ShowBorrowerDeleteDialogNo()
         {
-            throw new NotImplementedException();
+            _BorrowerDeletionDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_BorrowerDeletionDialog);
+
+            _BorrowerDeleteDialogYesButton.Clicked -= ShowBorrowerDeleteDialogYes;
+            _BorrowerDeleteDialogNoButton.Clicked -= ShowBorrowerDeleteDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowBorrowerDeleteDialogYes()
@@ -613,7 +711,9 @@ namespace Client.Logic
             _BorrowerDeleteDialogYesButton.Clicked -= ShowBorrowerDeleteDialogYes;
             _BorrowerDeleteDialogNoButton.Clicked -= ShowBorrowerDeleteDialogNo;
 
-            _BorrowerDeletionDialog.SetFocus();
+            _BorrowerDeletionDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_BorrowerDeletionDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -661,7 +761,14 @@ namespace Client.Logic
 
         private static void ShowGetByIdDialogNo()
         {
-            throw new NotImplementedException();
+            _GetByIdDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_GetByIdDialog);
+
+            _GetByIdDialogYesButton.Clicked -= ShowGetByIdDialogYes;
+            _GetByIdDialogNoButton.Clicked -= ShowGetByIdDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowGetByIdDialogYes()
@@ -675,7 +782,9 @@ namespace Client.Logic
             _GetByIdDialogYesButton.Clicked -= ShowGetByIdDialogYes;
             _GetByIdDialogNoButton.Clicked -= ShowGetByIdDialogNo;
 
-            _GetByIdDialog.SetFocus();
+            _GetByIdDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_GetByIdDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -747,7 +856,14 @@ namespace Client.Logic
 
         private static void ShowGetAllDialogNo()
         {
-            throw new NotImplementedException();
+            _GetAllDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_GetAllDialog);
+
+            _GetAllDialogYesButton.Clicked -= ShowGetAllDialogYes;
+            _GetAllDialogNoButton.Clicked -= ShowGetAllDialogNo;
+
+            WindowLogic.window.SetFocus();
         }
 
         private static void ShowGetAllDialogYes()
@@ -759,7 +875,9 @@ namespace Client.Logic
             _GetAllDialogYesButton.Clicked -= ShowGetAllDialogYes;
             _GetAllDialogNoButton.Clicked -= ShowGetAllDialogNo;
 
-            _GetAllDialog.SetFocus();
+            _GetAllDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_GetAllDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -838,7 +956,9 @@ namespace Client.Logic
             _SearchDialogYesButton.Clicked -= ShowSearchDialogYes;
             _SearchDialogNoButton.Clicked -= ShowSearchDialogNo;
 
-            _SearchDialog.SetFocus();
+            _SearchDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_SearchDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -914,7 +1034,9 @@ namespace Client.Logic
             _UpdateStateDialogYesButton.Clicked -= ShowUpdateStateDialogYes;
             _UpdateStateDialogNoButton.Clicked -= ShowUpdateStateDialogNo;
 
-            _UpdateStateDialog.SetFocus();
+            _UpdateStateDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateStateDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -981,7 +1103,9 @@ namespace Client.Logic
             _UpdateNameDialogYesButton.Clicked -= ShowUpdateNameDialogYes;
             _UpdateNameDialogNoButton.Clicked -= ShowUpdateNameDialogNo;
 
-            _UpdateUnitDialog.SetFocus();
+            _UpdateNameDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateNameDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -1048,7 +1172,9 @@ namespace Client.Logic
             _UpdateQuantityDialogYesButton.Clicked -= ShowUpdateQuantityDialogYes;
             _UpdateQuantityDialogNoButton.Clicked -= ShowUpdateQuantityDialogNo;
 
-            _UpdateUnitDialog.SetFocus();
+            _UpdateQuantityDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateQuantityDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -1114,7 +1240,9 @@ namespace Client.Logic
             _UpdateUnitDialogYesButton.Clicked -= ShowUpdateUnitDialogYes;
             _UpdateUnitDialogNoButton.Clicked -= ShowUpdateUnitDialogNo;
 
-            _UpdateUnitDialog.SetFocus();
+            _UpdateUnitDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateUnitDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -1168,7 +1296,9 @@ namespace Client.Logic
             _UpdateDescDialogYesButton.Clicked -= ShowUpdateDescDialogYes;
             _UpdateDescDialogNoButton.Clicked -= ShowUpdateDescDialogNo;
 
-            _UpdateDescriptionDialog.SetFocus();
+            _UpdateDescriptionDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateDescriptionDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -1246,7 +1376,9 @@ namespace Client.Logic
             _UpdateOwnerDialogYesButton.Clicked -= ShowUpdateOwnerDialogYes;
             _UpdateOwnerDialogNoButton.Clicked -= ShowUpdateOwnerDialogNo;
 
-            _UpdateOwnerDialog.SetFocus();
+            _UpdateOwnerDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_UpdateOwnerDialog);
 
             GetUpdateDeleteStatus status;
 
@@ -1305,7 +1437,9 @@ namespace Client.Logic
             _CreationDialogYesButton.Clicked -= ShowCreationDialogYes;
             _CreationDialogNoButton.Clicked -= ShowCreationDialogNo;
 
-            _CreationDialog.SetFocus();
+            _CreationDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_CreationDialog);
 
             CreateStatus status;
 

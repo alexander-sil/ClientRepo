@@ -442,7 +442,7 @@ namespace Client.Logic
 
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Patch, $"http://{IP}:{Port}/api/update-desc")
             {
-                Content = new ByteArrayContent(System.Text.Encoding.Unicode.GetBytes(((new char[] { (char)34 }).Concat(description.ToCharArray()).Concat(new char[] { (char)34 })).ToArray())),
+                Content = new StringContent("\"" + description + "\""),
                 Headers =
                 {
                     { "id", new string[] { id.ToString() } }

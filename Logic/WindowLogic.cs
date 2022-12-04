@@ -6,11 +6,9 @@ namespace Client.Logic
     {
         // Общедоступные компоненты
 
-        public static ListView entryList = new ListView(new Rect(1, 2, Console.WindowWidth - 2, Console.WindowHeight - 3), new List<string>());
-
         public static Label getResults = new Label("Результаты запроса");
 
-        public static Window window = new Window("REST Client")
+        public static Window window = new Window("Клиент информационной системы")
         {
             X = 0,
             Y = 1,
@@ -27,7 +25,7 @@ namespace Client.Logic
 
             Toplevel top = Application.Top;
 
-            Console.Title = "Клиент информационной системы";
+            Console.Title = "REST Client";
 
             Application.Init();
 
@@ -35,56 +33,52 @@ namespace Client.Logic
 
             #region УДАЛИТЬ ПРИ СБОРКЕ ПОД МАК!!!
 
-            Console.SetWindowSize(400, 300);
-            Console.SetBufferSize(400, 300);
+            Console.SetBufferSize(120, 70);
+            Console.SetWindowSize(120, 70);
 
             #endregion
 
             MenuBarItem[] menu = new MenuBarItem[] { new MenuBarItem("Tools", new MenuItem[] {
-                new MenuItem("Подключиться к серверу", "", null, () => true),
-                new MenuItem("Создать запись о мелком предмете", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Создать запись об учащемся, взявшем мелкий предмет", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Изменить имя учащегося, взявшего мелкий предмет", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Изменить класс учащегося, взявшего мелкий предмет", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Изменить здание учащегося, взявшего мелкий предмет", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Удалить запись об учащемся, взявшем мелкий предмет", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Получить запись о мелком предмете по магическому числу", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Получить все записи (таблица мелких предметов)", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Поиск в таблице мелких предметов по названию", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Изменить состояние мелкого предмета", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Изменить название мелкого предмета", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Изменить количество мелкого предмета", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Изменить единицу измерения мелкого предмета", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                new MenuItem("Изменить описание мелкого предмета", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                 new MenuItem("Изменить владельца мелкого предмета", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                 new MenuItem("Удалить запись о мелком предмете по магическому числу", "", null, () =>
-                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == String.Empty)))),
-                 new MenuItem("О программе", "", null, () => true)
+                new MenuItem("Подключиться к серверу", "", DialogLogic.ShowConnectionDialog, () => true),
+                new MenuItem("Создать запись о мелком предмете", "", DialogLogic.ShowCreationDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Создать запись об учащемся, взявшем мелкий предмет", "", DialogLogic.ShowNewBorrowerBindDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Изменить имя учащегося, взявшего мелкий предмет", "", DialogLogic.ShowBorrowerNameUpdateDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Изменить класс учащегося, взявшего мелкий предмет", "", DialogLogic.ShowBorrowerClassUpdateDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Изменить здание учащегося, взявшего мелкий предмет", "", DialogLogic.ShowBorrowerBuildingUpdateDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Удалить запись об учащемся, взявшем мелкий предмет", "", DialogLogic.ShowBorrowerDeleteDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Получить запись о мелком предмете по магическому числу", "", DialogLogic.ShowGetByIdDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Получить все записи (таблица мелких предметов)", "", DialogLogic.ShowGetAllDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Поиск в таблице мелких предметов по названию", "", DialogLogic.ShowSearchDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Изменить состояние мелкого предмета", "", DialogLogic.ShowUpdateStateDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Изменить название мелкого предмета", "", DialogLogic.ShowUpdateNameDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Изменить количество мелкого предмета", "", DialogLogic.ShowUpdateQuantityDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Изменить единицу измерения мелкого предмета", "", DialogLogic.ShowUpdateUnitDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                new MenuItem("Изменить описание мелкого предмета", "", DialogLogic.ShowUpdateDescDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                 new MenuItem("Изменить владельца мелкого предмета", "", DialogLogic.ShowUpdateOwnerDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                 new MenuItem("Удалить запись о мелком предмете по магическому числу", "", DialogLogic.ShowDeleteDialog, () =>
+                 (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
+                 new MenuItem("О программе", "", DialogLogic.ShowAboutDialog, () => true)
             }) };
 
 
             top.Add(new MenuBar(menu));
 
             window.Add(getResults);
-
-            window.Add(entryList);
-
-
 
             top.Add(window);
 
