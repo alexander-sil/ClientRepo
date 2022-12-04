@@ -6,7 +6,15 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            WindowLogic.Execute();
+            try
+            {
+                WindowLogic.Execute();
+            }
+            catch (Exception ex)
+            {
+                int x = MessageBox.Query("Ошибка", $"Пожалуйста, обратитесь к системному администратору.\nСообщение для отладки: {ex.Message}", "OK");
+            }
+
         }
     }
 }
