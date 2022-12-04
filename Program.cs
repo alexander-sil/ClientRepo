@@ -12,7 +12,7 @@ namespace Client
             }
             catch (Exception ex)
             {
-                int x = MessageBox.Query("Ошибка", $"Пожалуйста, обратитесь к системному администратору.\nСообщение для отладки: {ex.Message}", "OK");
+                MessageBox.Query("Ошибка", $"Пожалуйста, обратитесь к системному администратору.\nСообщение для отладки: {ex.Message}", "OK");
             }
 
         }
