@@ -263,7 +263,7 @@ namespace Client.Logic
 
         public static void ShowAboutDialog()
         {
-            MessageBox.Query("О программе", "Информационная система\nКлиент\nВерсия 1.0-test\n(C) Александр Силицкий и Павел Шмачилин\n2022 г.", "OK");
+            MessageBox.Query("О программе", "Информационная система\nКлиент\nВерсия 1.0\n(C) Александр Силицкий и Павел Шмачилин\n2022 г.", "OK");
         }
 
         public static void ShowConnectionDialog()
