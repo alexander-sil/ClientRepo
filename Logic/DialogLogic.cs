@@ -805,11 +805,10 @@ namespace Client.Logic
                 {
                     
 
-                    MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
                     int result = MessageBox.Query("Результаты поиска",
                         $"Магическое число: {model.Id}\n" +
-                        $"Название: {model.Name}" +
-                        $"Описание: {model.Description}" +
+                        $"Название: {model.Name}\n" +
+                        $"Описание: {model.Description}\n" +
                         $"Состояние: {model.State}\n" +
                         $"Количество: {model.Quantity} {model.Unit}\n" +
                         $"Владелец: {model.Owner}", "OK", "Кто взял?");
