@@ -75,7 +75,7 @@ namespace Client.Logic
 
         public static TextField _CreationDialogQuantityField = new TextField(2, 6, 25, "Количество");
 
-        public static TextField _CreationDialogUnitField = new TextField(2, 8, 25, "Единица измерения");
+        public static TextField _CreationDialogUnitField = new TextField(2, 8, 25, "Единица");
 
         public static TextField _CreationDialogDescField = new TextField(2, 10, 25, "Описание");
 
