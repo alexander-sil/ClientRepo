@@ -38,7 +38,7 @@ namespace Client.Logic
 
             #endregion
 
-            MenuBarItem[] menu = new MenuBarItem[] { new MenuBarItem("Tools", new MenuItem[] {
+            MenuBarItem[] menu = new MenuBarItem[] { new MenuBarItem("Функции", new MenuItem[] {
                 new MenuItem("Подключиться к серверу", "", DialogLogic.ShowConnectionDialog, () => true),
                 new MenuItem("Создать запись о мелком предмете", "", DialogLogic.ShowCreationDialog, () =>
                  (!((HTTPLogic.IP == null) || (HTTPLogic.IP == string.Empty)))),
