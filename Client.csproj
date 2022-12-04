@@ -19,7 +19,8 @@
     <PackageReference Include="Terminal.Gui" Version="1.8.2" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Logic\" />
+	<Folder Include="Logic\" />
     <Folder Include="Models\" />
+
   </ItemGroup>
 </Project>
