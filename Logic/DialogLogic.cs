@@ -299,6 +299,13 @@ namespace Client.Logic
             string ip = (string)_ConnectionDialogIPField.Text;
             string port = (string)_ConnectionDialogPortField.Text;
 
+            _ConnectionDialogYesButton.Clicked -= ShowConnectionDialogYes;
+            _ConnectionDialogNoButton.Clicked -= ShowConnectionDialogNo;
+
+            _ConnectionDialog.RemoveAll();
+
+            WindowLogic.window.Remove(_ConnectionDialog);
+
             if (ushort.TryParse(port, out ushort check))
             {
                 HTTPLogic.IP = ip;
