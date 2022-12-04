@@ -310,7 +310,8 @@ namespace Client.Logic
             {
                 HTTPLogic.IP = ip;
                 HTTPLogic.Port = check;
-            } else
+            }
+            else
             {
                 MessageBox.Query("Ошибка", "Неправильный формат числа порта", "OK");
             }
@@ -363,7 +364,7 @@ namespace Client.Logic
                 if (status.SuccessRet && status.SuccessDb) MessageBox.Query("Сообщение", $"Учащийся успешно удален", "OK");
                 else
                 {
-                    int result = MessageBox.Query("Ошибка удаления записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка удаления записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -436,7 +437,7 @@ namespace Client.Logic
                 if (status.SuccessRet && status.SuccessDb) MessageBox.Query("Сообщение", $"Учащийся успешно добавлен", "OK");
                 else
                 {
-                    int result = MessageBox.Query("Ошибка добавления записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка добавления записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -494,14 +495,14 @@ namespace Client.Logic
 
                 if (status.SuccessRet && status.SuccessDb)
                 {
-                    
+
                     MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
 
-                   
+
                 }
                 else
                 {
-                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка изменения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -582,14 +583,14 @@ namespace Client.Logic
 
                 if (status.SuccessRet && status.SuccessDb)
                 {
-                    
+
                     MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
 
-                   
+
                 }
                 else
                 {
-                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка изменения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -658,14 +659,14 @@ namespace Client.Logic
 
                 if (status.SuccessRet && status.SuccessDb)
                 {
-                    
+
                     MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
 
-                  
+
                 }
                 else
                 {
-                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка изменения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -734,11 +735,11 @@ namespace Client.Logic
                 {
                     MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
 
-                   
+
                 }
                 else
                 {
-                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка изменения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -803,7 +804,6 @@ namespace Client.Logic
 
                 if (status.SuccessRet && status.SuccessDb)
                 {
-                    
 
                     int result = MessageBox.Query("Результаты поиска",
                         $"Магическое число: {model.Id}\n" +
@@ -834,7 +834,7 @@ namespace Client.Logic
                 }
                 else
                 {
-                    int result = MessageBox.Query("Ошибка получения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка получения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -916,7 +916,7 @@ namespace Client.Logic
             }
             else
             {
-                int result = MessageBox.Query("Ошибка получения записей", "ОК", "Справка");
+                int result = MessageBox.Query("", "Ошибка получения записей", "ОК", "Справка");
 
                 if (result == 1)
                 {
@@ -992,7 +992,7 @@ namespace Client.Logic
             }
             else
             {
-                int result = MessageBox.Query("Ошибка получения записи", "ОК", "Справка");
+                int result = MessageBox.Query("", "Ошибка получения записи", "ОК", "Справка");
 
                 if (result == 1)
                 {
@@ -1055,7 +1055,7 @@ namespace Client.Logic
                 if (status.SuccessRet && status.SuccessDb) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
                 else
                 {
-                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка изменения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -1124,7 +1124,7 @@ namespace Client.Logic
                 if (status.SuccessRet && status.SuccessDb) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
                 else
                 {
-                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка изменения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -1193,7 +1193,7 @@ namespace Client.Logic
                 if (status.SuccessRet && status.SuccessDb) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
                 else
                 {
-                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка изменения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -1261,7 +1261,7 @@ namespace Client.Logic
                 if (status.SuccessRet && status.SuccessDb) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
                 else
                 {
-                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка изменения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -1317,7 +1317,7 @@ namespace Client.Logic
                 if (status.SuccessRet && status.SuccessDb) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
                 else
                 {
-                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка изменения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -1397,7 +1397,7 @@ namespace Client.Logic
                 if (status.SuccessRet && status.SuccessDb) MessageBox.Query("Сообщение", "Запись успешно изменена", "OK");
                 else
                 {
-                    int result = MessageBox.Query("Ошибка изменения записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка изменения записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
@@ -1467,7 +1467,7 @@ namespace Client.Logic
                 if (status.SuccessRet) MessageBox.Query("Сообщение", $"Запись добавлена в БД\nМагическое число: {status.Id}", "OK");
                 else
                 {
-                    int result = MessageBox.Query("Ошибка добавления записи", "ОК", "Справка");
+                    int result = MessageBox.Query("", "Ошибка добавления записи", "ОК", "Справка");
 
                     if (result == 1)
                     {
