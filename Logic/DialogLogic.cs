@@ -348,6 +348,13 @@ namespace Client.Logic
 
         public static void ShowConnectionDialog()
         {
+
+            _ConnectionDialogIPField.MouseEnter += ((MouseEventArgs e) => _ConnectionDialogIPField.SetFocus());
+            _ConnectionDialogPortField.MouseEnter += ((MouseEventArgs e) => _ConnectionDialogPortField.SetFocus());
+
+            _ConnectionDialogYesButton.MouseEnter += ((MouseEventArgs e) => _ConnectionDialogYesButton.SetFocus());
+            _ConnectionDialogNoButton.MouseEnter += ((MouseEventArgs e) => _ConnectionDialogNoButton.SetFocus());
+
             _ConnectionDialog.Add(_ConnectionDialogIPField);
             _ConnectionDialog.Add(_ConnectionDialogPortField);
 
@@ -359,10 +366,7 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_ConnectionDialog);
 
-            _ConnectionDialogIPField.MouseEnter += ((MouseEventArgs e) => _ConnectionDialogIPField.SetFocus());
-            _ConnectionDialogPortField.MouseEnter += ((MouseEventArgs e) => _ConnectionDialogPortField.SetFocus());
-            _ConnectionDialogYesButton.MouseEnter += ((MouseEventArgs e) => _ConnectionDialogYesButton.SetFocus());
-            _ConnectionDialogNoButton.MouseEnter += ((MouseEventArgs e) => _ConnectionDialogNoButton.SetFocus());
+
 
             _ConnectionDialogYesButton.Clicked += ShowConnectionDialogYes;
             _ConnectionDialogNoButton.Clicked += ShowConnectionDialogNo;
@@ -422,9 +426,6 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_DeleteDialog);
 
-            _DeleteDialogIdField.MouseEnter += ((MouseEventArgs e) => _DeleteDialogIdField.SetFocus());
-            _DeleteDialogYesButton.MouseEnter += ((MouseEventArgs e) => _DeleteDialogYesButton.SetFocus());
-            _DeleteDialogNoButton.MouseEnter += ((MouseEventArgs e) => _DeleteDialogNoButton.SetFocus());
 
             _DeleteDialogYesButton.Clicked += ShowDeleteDialogYes;
             _DeleteDialogNoButton.Clicked += ShowDeleteDialogNo;
@@ -485,6 +486,15 @@ namespace Client.Logic
 
         public static void ShowNewBorrowerBindDialog()
         {
+            _NewBorrowerBindDialogEntryIdField.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogEntryIdField.SetFocus());
+            _NewBorrowerBindDialogNameField.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogNameField.SetFocus());
+            _NewBorrowerBindDialogClassField.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogClassField.SetFocus());
+            _NewBorrowerBindDialogBuildingField.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogBuildingField.SetFocus());
+
+            _NewBorrowerBindDialogYesButton.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogYesButton.SetFocus());
+            _NewBorrowerBindDialogNoButton.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogNoButton.SetFocus());
+
+
             _NewBorrowerBindDialog.Add(_NewBorrowerBindDialogEntryIdField);
             _NewBorrowerBindDialog.Add(_NewBorrowerBindDialogNameField);
             _NewBorrowerBindDialog.Add(_NewBorrowerBindDialogClassField);
@@ -500,13 +510,6 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_NewBorrowerBindDialog);
 
-            _NewBorrowerBindDialogEntryIdField.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogEntryIdField.SetFocus());
-            _NewBorrowerBindDialogNameField.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogNameField.SetFocus());
-            _NewBorrowerBindDialogClassField.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogClassField.SetFocus());
-            _NewBorrowerBindDialogBuildingField.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogBuildingField.SetFocus());
-
-            _NewBorrowerBindDialogYesButton.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogYesButton.SetFocus());
-            _NewBorrowerBindDialogNoButton.MouseEnter += ((MouseEventArgs e) => _NewBorrowerBindDialogNoButton.SetFocus());
 
             _NewBorrowerBindDialogYesButton.Clicked += ShowNewBorrowerBindDialogYes;
             _NewBorrowerBindDialogNoButton.Clicked += ShowNewBorrowerBindDialogNo;
@@ -583,6 +586,13 @@ namespace Client.Logic
 
         public static void ShowBorrowerNameUpdateDialog()
         {
+            _BorrowerNameUpdateDialogIdField.MouseEnter += ((MouseEventArgs e) => _BorrowerNameUpdateDialogIdField.SetFocus());
+            _BorrowerNameUpdateDialogExpressionField.MouseEnter += ((MouseEventArgs e) => _BorrowerNameUpdateDialogExpressionField.SetFocus());
+            _BorrowerNameUpdateDialogNameField.MouseEnter += ((MouseEventArgs e) => _BorrowerNameUpdateDialogNameField.SetFocus());
+
+            _BorrowerNameUpdateDialogYesButton.MouseEnter += ((MouseEventArgs e) => _BorrowerNameUpdateDialogYesButton.SetFocus());
+            _BorrowerNameUpdateDialogNoButton.MouseEnter += ((MouseEventArgs e) => _BorrowerNameUpdateDialogNoButton.SetFocus());
+
             _BorrowerNameUpdateDialog.Add(_BorrowerNameUpdateDialogIdField);
             _BorrowerNameUpdateDialog.Add(_BorrowerNameUpdateDialogExpressionField);
             _NewBorrowerBindDialog.Add(_BorrowerNameUpdateDialogNameField);
@@ -596,12 +606,7 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_BorrowerNameUpdateDialog);
 
-            _BorrowerNameUpdateDialogIdField.MouseEnter += ((MouseEventArgs e) => _BorrowerNameUpdateDialogIdField.SetFocus());
-            _BorrowerNameUpdateDialogExpressionField.MouseEnter += ((MouseEventArgs e) => _BorrowerNameUpdateDialogExpressionField.SetFocus());
-            _BorrowerNameUpdateDialogNameField.MouseEnter += ((MouseEventArgs e) => _BorrowerNameUpdateDialogNameField.SetFocus());
 
-            _BorrowerNameUpdateDialogYesButton.MouseEnter += ((MouseEventArgs e) => _BorrowerNameUpdateDialogYesButton.SetFocus());
-            _BorrowerNameUpdateDialogNoButton.MouseEnter += ((MouseEventArgs e) => _BorrowerNameUpdateDialogNoButton.SetFocus());
 
             _BorrowerNameUpdateDialogYesButton.Clicked += ShowBorrowerNameUpdateDialogYes;
             _BorrowerNameUpdateDialogNoButton.Clicked += ShowBorrowerNameUpdateDialogNo;
@@ -678,6 +683,14 @@ namespace Client.Logic
 
         public static void ShowBorrowerClassUpdateDialog()
         {
+
+            _BorrowerClassUpdateDialogIdField.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogIdField.SetFocus());
+            _BorrowerClassUpdateDialogExpressionField.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogExpressionField.SetFocus());
+            _BorrowerClassUpdateDialogClassField.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogClassField.SetFocus());
+
+            _BorrowerClassUpdateDialogYesButton.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogYesButton.SetFocus());
+            _BorrowerClassUpdateDialogNoButton.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogNoButton.SetFocus());
+
             _BorrowerClassUpdateDialog.Add(_BorrowerClassUpdateDialogIdField);
             _BorrowerClassUpdateDialog.Add(_BorrowerClassUpdateDialogExpressionField);
             _BorrowerClassUpdateDialog.Add(_BorrowerClassUpdateDialogClassField);
@@ -691,12 +704,6 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_BorrowerClassUpdateDialog);
 
-            _BorrowerClassUpdateDialogIdField.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogIdField.SetFocus());
-            _BorrowerClassUpdateDialogExpressionField.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogExpressionField.SetFocus());
-            _BorrowerClassUpdateDialogClassField.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogClassField.SetFocus());
-
-            _BorrowerClassUpdateDialogYesButton.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogYesButton.SetFocus());
-            _BorrowerClassUpdateDialogNoButton.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogNoButton.SetFocus());
 
             _BorrowerClassUpdateDialogYesButton.Clicked += ShowBorrowerClassUpdateDialogYes;
             _BorrowerClassUpdateDialogNoButton.Clicked += ShowBorrowerClassUpdateDialogNo;
@@ -773,6 +780,13 @@ namespace Client.Logic
 
         public static void ShowBorrowerBuildingUpdateDialog()
         {
+            _BorrowerBuildingUpdateDialogIdField.MouseEnter += ((MouseEventArgs e) => _BorrowerBuildingUpdateDialogIdField.SetFocus());
+            _BorrowerBuildingUpdateDialogExpressionField.MouseEnter += ((MouseEventArgs e) => _BorrowerBuildingUpdateDialogExpressionField.SetFocus());
+            _BorrowerBuildingUpdateDialogBuildingField.MouseEnter += ((MouseEventArgs e) => _BorrowerBuildingUpdateDialogBuildingField.SetFocus());
+
+            _BorrowerBuildingUpdateDialogYesButton.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogYesButton.SetFocus());
+            _BorrowerBuildingUpdateDialogNoButton.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogNoButton.SetFocus());
+
             _BorrowerBuildingUpdateDialog.Add(_BorrowerBuildingUpdateDialogIdField);
             _BorrowerBuildingUpdateDialog.Add(_BorrowerBuildingUpdateDialogExpressionField);
             _BorrowerBuildingUpdateDialog.Add(_BorrowerBuildingUpdateDialogBuildingField);
@@ -786,12 +800,7 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_BorrowerBuildingUpdateDialog);
 
-            _BorrowerBuildingUpdateDialogIdField.MouseEnter += ((MouseEventArgs e) => _BorrowerBuildingUpdateDialogIdField.SetFocus());
-            _BorrowerBuildingUpdateDialogExpressionField.MouseEnter += ((MouseEventArgs e) => _BorrowerBuildingUpdateDialogExpressionField.SetFocus());
-            _BorrowerBuildingUpdateDialogBuildingField.MouseEnter += ((MouseEventArgs e) => _BorrowerBuildingUpdateDialogBuildingField.SetFocus());
 
-            _BorrowerBuildingUpdateDialogYesButton.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogYesButton.SetFocus());
-            _BorrowerBuildingUpdateDialogNoButton.MouseEnter += ((MouseEventArgs e) => _BorrowerClassUpdateDialogNoButton.SetFocus());
 
             _BorrowerBuildingUpdateDialogYesButton.Clicked += ShowBorrowerBuildingUpdateDialogYes;
             _BorrowerBuildingUpdateDialogNoButton.Clicked += ShowBorrowerBuildingUpdateDialogNo;
@@ -868,6 +877,12 @@ namespace Client.Logic
 
         public static void ShowBorrowerDeleteDialog()
         {
+            _BorrowerDeleteDialogIdField.MouseEnter += ((MouseEventArgs e) => _BorrowerDeleteDialogIdField.SetFocus());
+            _BorrowerDeleteDialogExpressionField.MouseEnter += ((MouseEventArgs e) => _BorrowerDeleteDialogExpressionField.SetFocus());
+
+            _BorrowerDeleteDialogYesButton.MouseEnter += ((MouseEventArgs e) => _BorrowerDeleteDialogYesButton.SetFocus());
+            _BorrowerDeleteDialogNoButton.MouseEnter += ((MouseEventArgs e) => _BorrowerDeleteDialogNoButton.SetFocus());
+
             _BorrowerDeletionDialog.Add(_BorrowerDeleteDialogIdField);
             _BorrowerDeletionDialog.Add(_BorrowerDeleteDialogExpressionField);
 
@@ -879,11 +894,7 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_BorrowerDeletionDialog);
 
-            _BorrowerDeleteDialogIdField.MouseEnter += ((MouseEventArgs e) => _BorrowerDeleteDialogIdField.SetFocus());
-            _BorrowerDeleteDialogExpressionField.MouseEnter += ((MouseEventArgs e) => _BorrowerDeleteDialogExpressionField.SetFocus());
 
-            _BorrowerDeleteDialogYesButton.MouseEnter += ((MouseEventArgs e) => _BorrowerDeleteDialogYesButton.SetFocus());
-            _BorrowerDeleteDialogNoButton.MouseEnter += ((MouseEventArgs e) => _BorrowerDeleteDialogNoButton.SetFocus());
 
             _BorrowerDeleteDialogYesButton.Clicked += ShowBorrowerDeleteDialogYes;
             _BorrowerDeleteDialogNoButton.Clicked += ShowBorrowerDeleteDialogNo;
@@ -957,6 +968,11 @@ namespace Client.Logic
         public static void ShowGetByIdDialog()
         {
 
+            _GetByIdDialogIdField.MouseEnter += ((MouseEventArgs e) => _GetByIdDialogIdField.SetFocus());
+
+            _GetByIdDialogYesButton.MouseEnter += ((MouseEventArgs e) => _GetByIdDialogYesButton.SetFocus());
+            _GetByIdDialogNoButton.MouseEnter += ((MouseEventArgs e) => _GetByIdDialogNoButton.SetFocus());
+
             _GetByIdDialog.Add(_GetByIdDialogIdField);
 
             _GetByIdDialog.Add(_GetByIdDialogIdLabel);
@@ -967,10 +983,6 @@ namespace Client.Logic
             WindowLogic.window.Add(_GetByIdDialog);
 
 
-            _GetByIdDialogIdField.MouseEnter += ((MouseEventArgs e) => _GetByIdDialogIdField.SetFocus());
-
-            _GetByIdDialogYesButton.MouseEnter += ((MouseEventArgs e) => _GetByIdDialogYesButton.SetFocus());
-            _GetByIdDialogNoButton.MouseEnter += ((MouseEventArgs e) => _GetByIdDialogNoButton.SetFocus());
 
             _GetByIdDialogYesButton.Clicked += ShowGetByIdDialogYes;
             _GetByIdDialogNoButton.Clicked += ShowGetByIdDialogNo;
@@ -1064,15 +1076,15 @@ namespace Client.Logic
 
         public static void ShowGetAllDialog()
         {
+            _GetAllDialogYesButton.MouseEnter += ((MouseEventArgs e) => _GetAllDialogYesButton.SetFocus());
+            _GetAllDialogNoButton.MouseEnter += ((MouseEventArgs e) => _GetAllDialogNoButton.SetFocus());
+
             _GetAllDialog.Add(_GetAllDialogYesButton);
             _GetAllDialog.Add(_GetAllDialogNoButton);
 
             _GetAllDialog.Add(_GetAllDialogServiceLabel);
 
             WindowLogic.window.Add(_GetAllDialog);
-
-            _GetAllDialogYesButton.MouseEnter += ((MouseEventArgs e) => _GetAllDialogYesButton.SetFocus());
-            _GetAllDialogNoButton.MouseEnter += ((MouseEventArgs e) => _GetAllDialogNoButton.SetFocus());
 
             _GetAllDialogYesButton.Clicked += ShowGetAllDialogYes;
             _GetAllDialogNoButton.Clicked += ShowGetAllDialogNo;
@@ -1146,6 +1158,11 @@ namespace Client.Logic
 
         public static void ShowSearchDialog()
         {
+            _SearchDialogTermTextField.MouseEnter += ((MouseEventArgs e) => _SearchDialogTermTextField.SetFocus());
+
+            _SearchDialogYesButton.MouseEnter += ((MouseEventArgs e) => _SearchDialogYesButton.SetFocus());
+            _SearchDialogNoButton.MouseEnter += ((MouseEventArgs e) => _SearchDialogNoButton.SetFocus());
+
             _SearchDialog.Add(_SearchDialogTermTextField);
 
             _SearchDialog.Add(_SearchDialogTermLabel);
@@ -1155,10 +1172,7 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_SearchDialog);
 
-            _SearchDialogTermTextField.MouseEnter += ((MouseEventArgs e) => _SearchDialogTermTextField.SetFocus());
 
-            _SearchDialogYesButton.MouseEnter += ((MouseEventArgs e) => _SearchDialogYesButton.SetFocus());
-            _SearchDialogNoButton.MouseEnter += ((MouseEventArgs e) => _SearchDialogNoButton.SetFocus());
 
             _SearchDialogYesButton.Clicked += ShowSearchDialogYes;
             _SearchDialogNoButton.Clicked += ShowSearchDialogNo;
@@ -1233,6 +1247,12 @@ namespace Client.Logic
 
         public static void ShowUpdateStateDialog()
         {
+            _UpdateStateDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateStateDialogIdTextField.SetFocus());
+            _UpdateStateDialogStateTextField.MouseEnter += ((MouseEventArgs e) => _UpdateStateDialogStateTextField.SetFocus());
+
+            _UpdateStateDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateStateDialogYesButton.SetFocus());
+            _UpdateStateDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateStateDialogNoButton.SetFocus());
+
             _UpdateStateDialog.Add(_UpdateStateDialogIdTextField);
             _UpdateStateDialog.Add(_UpdateStateDialogStateTextField);
 
@@ -1244,11 +1264,7 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_UpdateStateDialog);
 
-            _UpdateStateDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateStateDialogIdTextField.SetFocus());
-            _UpdateStateDialogStateTextField.MouseEnter += ((MouseEventArgs e) => _UpdateStateDialogStateTextField.SetFocus());
 
-            _UpdateStateDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateStateDialogYesButton.SetFocus());
-            _UpdateStateDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateStateDialogNoButton.SetFocus());
 
             _UpdateStateDialogYesButton.Clicked += ShowUpdateStateDialogYes;
             _UpdateStateDialogNoButton.Clicked += ShowUpdateStateDialogNo;
@@ -1316,6 +1332,12 @@ namespace Client.Logic
 
         public static void ShowUpdateNameDialog()
         {
+            _UpdateNameDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateNameDialogIdTextField.SetFocus());
+            _UpdateNameDialogNameTextField.MouseEnter += ((MouseEventArgs e) => _UpdateNameDialogNameTextField.SetFocus());
+
+            _UpdateNameDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateNameDialogYesButton.SetFocus());
+            _UpdateNameDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateNameDialogNoButton.SetFocus());
+
             _UpdateNameDialog.Add(_UpdateNameDialogIdTextField);
             _UpdateNameDialog.Add(_UpdateNameDialogNameTextField);
 
@@ -1327,11 +1349,7 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_UpdateNameDialog);
 
-            _UpdateNameDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateNameDialogIdTextField.SetFocus());
-            _UpdateNameDialogNameTextField.MouseEnter += ((MouseEventArgs e) => _UpdateNameDialogNameTextField.SetFocus());
 
-            _UpdateNameDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateNameDialogYesButton.SetFocus());
-            _UpdateNameDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateNameDialogNoButton.SetFocus());
 
             _UpdateNameDialogYesButton.Clicked += ShowUpdateNameDialogYes;
             _UpdateNameDialogNoButton.Clicked += ShowUpdateNameDialogNo;
@@ -1401,6 +1419,13 @@ namespace Client.Logic
 
         public static void ShowUpdateQuantityDialog()
         {
+
+            _UpdateQuantityDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateQuantityDialogIdTextField.SetFocus());
+            _UpdateQuantityDialogQuantityTextField.MouseEnter += ((MouseEventArgs e) => _UpdateQuantityDialogQuantityTextField.SetFocus());
+
+            _UpdateQuantityDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateQuantityDialogYesButton.SetFocus());
+            _UpdateQuantityDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateQuantityDialogNoButton.SetFocus());
+
             _UpdateQuantityDialog.Add(_UpdateQuantityDialogIdTextField);
             _UpdateQuantityDialog.Add(_UpdateQuantityDialogQuantityTextField);
 
@@ -1412,11 +1437,6 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_UpdateQuantityDialog);
 
-            _UpdateQuantityDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateQuantityDialogIdTextField.SetFocus());
-            _UpdateQuantityDialogQuantityTextField.MouseEnter += ((MouseEventArgs e) => _UpdateQuantityDialogQuantityTextField.SetFocus());
-
-            _UpdateQuantityDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateQuantityDialogYesButton.SetFocus());
-            _UpdateQuantityDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateQuantityDialogNoButton.SetFocus());
 
             _UpdateQuantityDialogYesButton.Clicked += ShowUpdateQuantityDialogYes;
             _UpdateQuantityDialogNoButton.Clicked += ShowUpdateQuantityDialogNo;
@@ -1484,6 +1504,13 @@ namespace Client.Logic
 
         public static void ShowUpdateUnitDialog()
         {
+
+            _UpdateUnitDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateUnitDialogIdTextField.SetFocus());
+            _UpdateUnitDialogUnitTextField.MouseEnter += ((MouseEventArgs e) => _UpdateUnitDialogUnitTextField.SetFocus());
+
+            _UpdateUnitDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateUnitDialogYesButton.SetFocus());
+            _UpdateUnitDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateUnitDialogNoButton.SetFocus());
+
             _UpdateUnitDialog.Add(_UpdateUnitDialogIdTextField);
             _UpdateUnitDialog.Add(_UpdateUnitDialogUnitTextField);
 
@@ -1495,11 +1522,6 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_UpdateUnitDialog);
 
-            _UpdateUnitDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateUnitDialogIdTextField.SetFocus());
-            _UpdateUnitDialogUnitTextField.MouseEnter += ((MouseEventArgs e) => _UpdateUnitDialogUnitTextField.SetFocus());
-
-            _UpdateUnitDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateUnitDialogYesButton.SetFocus());
-            _UpdateUnitDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateUnitDialogNoButton.SetFocus());
 
             _UpdateUnitDialogYesButton.Clicked += ShowUpdateUnitDialogYes;
             _UpdateUnitDialogNoButton.Clicked += ShowUpdateUnitDialogNo;
@@ -1568,6 +1590,12 @@ namespace Client.Logic
 
         public static void ShowUpdateDescDialog()
         {
+            _UpdateDescriptionDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateDescriptionDialogIdTextField.SetFocus());
+            _UpdateDescriptionDialogDescriptionTextField.MouseEnter += ((MouseEventArgs e) => _UpdateDescriptionDialogDescriptionTextField.SetFocus());
+
+            _UpdateDescDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateDescDialogYesButton.SetFocus());
+            _UpdateDescDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateDescDialogNoButton.SetFocus());
+
             _UpdateDescriptionDialog.Add(_UpdateDescriptionDialogIdTextField);
             _UpdateDescriptionDialog.Add(_UpdateDescriptionDialogDescriptionTextField);
 
@@ -1579,11 +1607,7 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_UpdateDescriptionDialog);
 
-            _UpdateDescriptionDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateDescriptionDialogIdTextField.SetFocus());
-            _UpdateDescriptionDialogDescriptionTextField.MouseEnter += ((MouseEventArgs e) => _UpdateDescriptionDialogDescriptionTextField.SetFocus());
 
-            _UpdateDescDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateDescDialogYesButton.SetFocus());
-            _UpdateDescDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateDescDialogNoButton.SetFocus());
 
             _UpdateDescDialogYesButton.Clicked += ShowUpdateDescDialogYes;
             _UpdateDescDialogNoButton.Clicked += ShowUpdateDescDialogNo;
@@ -1651,6 +1675,13 @@ namespace Client.Logic
 
         public static void ShowUpdateOwnerDialog()
         {
+
+            _UpdateOwnerDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogIdTextField.SetFocus());
+            _UpdateOwnerDialogOwnerTextField.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogOwnerTextField.SetFocus());
+
+            _UpdateOwnerDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogYesButton.SetFocus());
+            _UpdateOwnerDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogNoButton.SetFocus());
+
             _UpdateOwnerDialog.Add(_UpdateOwnerDialogIdTextField);
             _UpdateOwnerDialog.Add(_UpdateOwnerDialogOwnerTextField);
 
@@ -1661,12 +1692,6 @@ namespace Client.Logic
             _UpdateOwnerDialog.Add(_UpdateOwnerDialogNoButton);
 
             WindowLogic.window.Add(_UpdateOwnerDialog);
-
-            _UpdateOwnerDialogIdTextField.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogIdTextField.SetFocus());
-            _UpdateOwnerDialogOwnerTextField.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogOwnerTextField.SetFocus());
-
-            _UpdateOwnerDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogYesButton.SetFocus());
-            _UpdateOwnerDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogNoButton.SetFocus());
 
             _UpdateOwnerDialogYesButton.Clicked += ShowUpdateOwnerDialogYes;
             _UpdateOwnerDialogNoButton.Clicked += ShowUpdateOwnerDialogNo;
@@ -1734,6 +1759,17 @@ namespace Client.Logic
 
         public static void ShowCreationDialog()
         {
+
+            _CreationDialogStateField.MouseEnter += ((MouseEventArgs e) => _CreationDialogStateField.SetFocus());
+            _CreationDialogNameField.MouseEnter += ((MouseEventArgs e) => _CreationDialogNameField.SetFocus());
+            _CreationDialogQuantityField.MouseEnter += ((MouseEventArgs e) => _CreationDialogQuantityField.SetFocus());
+            _CreationDialogUnitField.MouseEnter += ((MouseEventArgs e) => _CreationDialogUnitField.SetFocus());
+            _CreationDialogDescField.MouseEnter += ((MouseEventArgs e) => _CreationDialogDescField.SetFocus());
+            _CreationDialogOwnerField.MouseEnter += ((MouseEventArgs e) => _CreationDialogOwnerField.SetFocus());
+
+            _UpdateOwnerDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogYesButton.SetFocus());
+            _UpdateOwnerDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogNoButton.SetFocus());
+
             _CreationDialog.Add(_CreationDialogStateField);
             _CreationDialog.Add(_CreationDialogNameField);
             _CreationDialog.Add(_CreationDialogQuantityField);
@@ -1753,15 +1789,6 @@ namespace Client.Logic
 
             WindowLogic.window.Add(_CreationDialog);
 
-            _CreationDialogStateField.MouseEnter += ((MouseEventArgs e) => _CreationDialogStateField.SetFocus());
-            _CreationDialogNameField.MouseEnter += ((MouseEventArgs e) => _CreationDialogNameField.SetFocus());
-            _CreationDialogQuantityField.MouseEnter += ((MouseEventArgs e) => _CreationDialogQuantityField.SetFocus());
-            _CreationDialogUnitField.MouseEnter += ((MouseEventArgs e) => _CreationDialogUnitField.SetFocus());
-            _CreationDialogDescField.MouseEnter += ((MouseEventArgs e) => _CreationDialogDescField.SetFocus());
-            _CreationDialogOwnerField.MouseEnter += ((MouseEventArgs e) => _CreationDialogOwnerField.SetFocus());
-
-            _UpdateOwnerDialogYesButton.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogYesButton.SetFocus());
-            _UpdateOwnerDialogNoButton.MouseEnter += ((MouseEventArgs e) => _UpdateOwnerDialogNoButton.SetFocus());
 
             _CreationDialogYesButton.Clicked += ShowCreationDialogYes;
             _CreationDialogNoButton.Clicked += ShowCreationDialogNo;
