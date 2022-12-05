@@ -28,8 +28,6 @@ namespace Client.Logic
             Console.Title = "REST Client";
 
             Application.Init();
-             
-            top = Application.Top;
 
             #region УДАЛИТЬ ПРИ СБОРКЕ ПОД МАК!!!
 
@@ -37,6 +35,8 @@ namespace Client.Logic
             Console.SetWindowSize(120, 70);
 
             #endregion
+
+            top = Application.Top;
 
             MenuBarItem[] menu = new MenuBarItem[] { new MenuBarItem("Функции", new MenuItem[] {
                 new MenuItem("Подключиться к серверу", "", DialogLogic.ShowConnectionDialog, () => true),
